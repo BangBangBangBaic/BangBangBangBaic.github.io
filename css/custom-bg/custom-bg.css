@@ -1,0 +1,6 @@
+body {
+  background-image: url('/img/backxink.jpg');
+  background-size: cover;
+  background-position: center;
+  filter: blur(8px);
+}

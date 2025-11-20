@@ -1,0 +1,13 @@
+#index-cover, .index-cover {
+  background-image: url('/img/backxink.jpg');
+  background-size: cover;
+  background-position: center;
+  filter: blur(8px);
+  /* 可选：让内容不被虚化 */
+  z-index: 0;
+}
+#index-cover .index-info, .index-cover .index-info {
+  position: relative;
+  z-index: 1;
+  filter: none;
+}
