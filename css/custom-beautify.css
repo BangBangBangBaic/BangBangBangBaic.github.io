@@ -1,0 +1,51 @@
+/* 首页大图虚化+渐变遮罩 */
+#index-cover, .index-cover {
+  background-image: url('/img/backxink.jpg');
+  background-size: cover;
+  background-position: center;
+  filter: blur(8px);
+  position: relative;
+}
+#index-cover::after, .index-cover::after {
+  content: '';
+  position: absolute;
+  left: 0; top: 0; right: 0; bottom: 0;
+  background: linear-gradient(to bottom, rgba(0,123,255,0.6) 0%, rgba(0,123,255,0.2) 100%);
+  z-index: 1;
+}
+#index-cover .index-info, .index-cover .index-info {
+  position: relative;
+  z-index: 2;
+  filter: none;
+}
+/* 卡片圆角+阴影+hover动画 */
+.recent-post-item, .card {
+  border-radius: 16px;
+  box-shadow: 0 4px 24px rgba(0,123,255,0.08);
+  transition: box-shadow 0.3s, transform 0.3s;
+  background: #fff;
+}
+.recent-post-item:hover, .card:hover {
+  box-shadow: 0 8px 32px rgba(0,123,255,0.18);
+  transform: translateY(-4px) scale(1.02);
+}
+/* 按钮高亮蓝色 */
+button, .btn, .rightside-btn, .pagination .page-number {
+  background: hsl(211, 97%, 69%) 0%;
+  color: #fff;
+  border-radius: 8px;
+  border: none;
+  transition: background 0.2s;
+}
+button:hover, .btn:hover, .rightside-btn:hover, .pagination .page-number:hover {
+  background: #0056b3;
+}
+/* 页脚美化 */
+#footer {
+  background: linear-gradient(to right, hsl(211, 97%, 69%) 0%, #0056b3 100%);
+  color: #fff;
+  border-top-left-radius: 24px;
+  border-top-right-radius: 24px;
+  padding: 32px 0 16px 0;
+}
+#footer a { color: #fff; text-decoration: underline; }
