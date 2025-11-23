@@ -4,6 +4,44 @@
   
     
     <entry>
+      <title>GO语言程序设计-第三次阅读</title>
+      <link href="/2025/11/23/GO%E8%AF%AD%E8%A8%80%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1-%E7%AC%AC%E4%B8%89%E6%AC%A1%E9%98%85%E8%AF%BB/"/>
+      <url>/2025/11/23/GO%E8%AF%AD%E8%A8%80%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1-%E7%AC%AC%E4%B8%89%E6%AC%A1%E9%98%85%E8%AF%BB/</url>
+      
+        <content type="html"><![CDATA[<p>这是一个总结性质的读书笔记，大佬都说每次读这本书都有一种神秘的体验。这是第三次阅读（实际上应该是第一次阅读，前面好多都不知道直接跳了之前）话不多说，直接开始吧</p><h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>这本书还是不大适合小白直接看，我第一次看的时候差点晕死过去我靠。这本书讲了Go的基础语法的所有特性，包括 测试，并发，反射，低级编程在内的所有的初步学习，虽然很初步，但是来了解一下很不错。</p><h3 id="第一章："><a href="#第一章：" class="headerlink" title="第一章："></a>第一章：</h3><p>主要讲解了一些Go能实现的好玩的功能，比如web开发，爬虫，命令行，还有并发，初学者看这本书是看不懂的，正如作者在导言中说的一样，这本书是给转语言的人准备的，挺难搞的。爬虫是构建http.Get（url）,并发是用通道直接来，但更多的是命令行，os.Arg获取命令行信息，并发获取多个url，或是用url爬，这是第一章的内容，作业是用go爬取一下github网站，还有就是爬虫的概念，就是模拟人类打开网页，md这个我之前都不知道，还以为是什么好高深的东西</p><h3 id="第二章："><a href="#第二章：" class="headerlink" title="第二章："></a>第二章：</h3><p>整了一手大的，讲解了一下go的基本语法，还有是数据类型没讲讲指针和new，以及变量的作用周期和作用域</p><h3 id="第三章："><a href="#第三章：" class="headerlink" title="第三章："></a>第三章：</h3><p>数据类型，总体和C差不多，就是改成了int64，代替long long， 用float 64 代替double，其他差不多，还有就是讲解了一下unicode有关知识，还有go自带的常量翻译器iota</p><h3 id="第四章："><a href="#第四章：" class="headerlink" title="第四章："></a>第四章：</h3><p>复合的数据类型，map映射，make(map[X]X),结构体，嵌套使用，可以直接调用，c.point.x和c.x是一样的,但是不能使用字面量初始化，还有就是json和xml，marshal，还有就是tag自动转换，json的tag就是把结构体转换成json字段的时候按tag来，grom也是一样，感觉就是tag就是方便与其他数据类型交互</p><h3 id="第五章："><a href="#第五章：" class="headerlink" title="第五章："></a>第五章：</h3><p>函数，讲解特性多返回值，讲解匿名函数（构建闭包），讲解变长函数（就是输入参数用…来代替，表示可以输入很多参数），讲解宕机和恢复。</p><h3 id="第六章："><a href="#第六章：" class="headerlink" title="第六章："></a>第六章：</h3><p>方法，好像没啥东西，好像就是用匿名函数给结构体加方法</p><h3 id="第七章："><a href="#第七章：" class="headerlink" title="第七章："></a>第七章：</h3><p>接口：</p><ul><li>只要实现接口所有方法他就是接口</li><li>接口不一定必须得有方法，inference类型也是接口，可以接受所有类型，让go更有灵活性</li><li>接口最大作用就是实现程序耦合度降低，比如我现在有一个函数是func(w writer)，实现writer接口有两个，一个诗人一个画家，需要画家传画家，需要诗人传诗人，这样很棒，比直接写两个函数好多了，还简单。</li><li>类型断言就是，比如一个函数，我要诗人，你传了画家我就报错。或者也可以是类型，x.(type)，要是int 就…，要是别的就…</li></ul><h3 id="第八章："><a href="#第八章：" class="headerlink" title="第八章："></a>第八章：</h3><p>并发:</p><ul><li>基础的通道处理，&lt;-chan，通道里没值会阻塞，chan&lt;-没有变量也会阻塞，从而实现并发的统一</li><li>chan基本用法make(chan X, Y)X是通道里边值的类型，Y是缓存数，比如缓存数为3，输入的话输入3个才阻塞</li><li>多路复用器，便于检测那个通道更先出值，是并发处理更简便，尝尝与for连用</li><li>并发爬虫</li></ul><h3 id="第九章："><a href="#第九章：" class="headerlink" title="第九章："></a>第九章：</h3><h4 id="锁："><a href="#锁：" class="headerlink" title="锁："></a>锁：</h4><p>并发会出安全问题，比如同时修改一处数据会导致数据丢失，那么这样就需要控制，有人说，我用通道一个个来阻塞不就好了，很棒，但是这样会很慢，并且不方便，所以就发明了锁。<br>sync.Mutex：<br>普通锁，尝尝与defer连用<br>sync.RWMutex<br>有些多次但功能有限的上锁，加快速度，比如读和写<br>sync.Once<br>初始化上锁，原理是atomic和基础的锁</p><h4 id="协程"><a href="#协程" class="headerlink" title="协程"></a>协程</h4><p>讲了go基础的协程概念，比如开始是2kb，会增长，其他没说<br>补充:GMP就是go携程的实现原理，G是go的携程，M是机械的线程，P是programer是两者之间的联系，G通过P与M联系实现协程</p><h3 id="第十章："><a href="#第十章：" class="headerlink" title="第十章："></a>第十章：</h3><p>怎么导入包，包工具，总之就是goform和gobuild之类的指令</p><h3 id="第十一章："><a href="#第十一章：" class="headerlink" title="第十一章："></a>第十一章：</h3><p>测试：<br>基础测试：_test.go构建临时的main文件运行,首先就是TestXXX（T *testing.T）函数命名方法构建好了就用go test来试试，会有ok不ok，想要具体信息可以  go test -v 会显示具体信息，还有就是bench可以显示test函数最基本的数据，比如时间之类的。</p><h3 id="第十二章："><a href="#第十二章：" class="headerlink" title="第十二章："></a>第十二章：</h3><p>反射：<br>就是动态检测程序运行，讲了reflect.Value和type，可以检测类型和设置值，目前我还不会用，只知道它很重要，用于很多api中</p><h3 id="第十三章："><a href="#第十三章：" class="headerlink" title="第十三章："></a>第十三章：</h3><p>低级编程：<br>就是C里面的东西不安全给他封存了，unsafe直接用<br>unsafe.sizeof字节数…..<br>Cgo，在go里面写C，调用C的库，用法</p><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*这里面写C的代码，都可以，也可以写好然后这里include直接用，注意要紧贴着import &quot;c&quot;*/</span></span><br><span class="line"><span class="keyword">import</span> <span class="string">&quot;C&quot;</span></span><br><span class="line">....</span><br></pre></td></tr></table></figure><h3 id="总结-1"><a href="#总结-1" class="headerlink" title="总结"></a>总结</h3><p>我现在其实还是没很看懂，大概了解它讲了什么，懵懵懂懂的，哦对了，还会了一个flag包，简化命令的，相当于设置键值对的方式简化命令，而不是用os.Arg一个一个读取</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 学习笔记 </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>11月第四周</title>
+      <link href="/2025/11/23/11%E6%9C%88%E7%AC%AC%E5%9B%9B%E5%91%A8/"/>
+      <url>/2025/11/23/11%E6%9C%88%E7%AC%AC%E5%9B%9B%E5%91%A8/</url>
+      
+        <content type="html"><![CDATA[]]></content>
+      
+      
+      <categories>
+          
+          <category> 日记 </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>Go web 读书笔记</title>
       <link href="/2025/11/20/Go-web-%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/"/>
       <url>/2025/11/20/Go-web-%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/</url>
@@ -100,8 +138,8 @@
     
     <entry>
       <title>无能的11月</title>
-      <link href="/2025/11/20/2025-11%E6%9C%88/"/>
-      <url>/2025/11/20/2025-11%E6%9C%88/</url>
+      <link href="/2025/11/20/11%E6%9C%88%E7%AC%AC%E4%B8%89%E5%91%A8/"/>
+      <url>/2025/11/20/11%E6%9C%88%E7%AC%AC%E4%B8%89%E5%91%A8/</url>
       
         <content type="html"><![CDATA[<h2 id="11-20"><a href="#11-20" class="headerlink" title="11.20"></a>11.20</h2><p>今天是一个平静的一天，我上午生病，发烧，但是莫名其妙感觉发烧状态下学高数很爽，本来因为翘课而拉下的进度一下子就赶上来了，咕咕嘎嘎，感觉是因为今天早上学长和我快问快答的缘故，其实我挺希望被拷打的，可以检验自己的学习程度，追重要的是懒得刷题，这样情景化的题目反而很爽。（或许我每天早起可以拷打拷打自己？）遗憾是的是今天什么都没学，就当休息吧，真的要好好休息。</p><p>下午还做了一个很奇怪的梦，感觉过了一生我靠，梦到28岁和三个女孩子相亲，好可怕，好可怕</p><p>自律还是要继续，不如今天看看毛主席的实践论？</p><h2 id="11-21"><a href="#11-21" class="headerlink" title="11.21"></a>11.21</h2><p>没有看实践论，但是昨天搞了一晚上博客，基本操作是熟悉了，今天看看能不能加评论功能，今天花了三个小时又把GO程序设计看了一遍，我感觉提升不大，但是之前的东西都变得好陌生，重新复习一下也好，不过了解了一下flag包，打算等一下再熟悉一下反射和测试，嘻嘻，希望今天能早睡。</p><h2 id="11-22"><a href="#11-22" class="headerlink" title="11.22"></a>11.22</h2><p>早睡失败，早起失败，今天举办了吃辣大赛，但是今日上午发生的事挺坏的，哎，今天什么都没学，今日好好歇息一会儿吧。只是说有了一些感悟，人其实不能做到十全十美的，你内心想告诉你成为一个情绪稳定的人，一个会做正确的事的人，有时候，你在反思自己的时候就会思考，你要用怎样的方法去挽回。你站在原地，向四面八方散发可能的道路，发现都是错误的，最后，你发现站在原地也是错误的。好吧，言语还是很难描述这种感觉，挺难过的。</p><h1 id="11-23"><a href="#11-23" class="headerlink" title="11.23"></a>11.23</h1><p>今天喝了酒，唱了歌，倒是给我唱爽了，还有就是了解了一下redis是什么东西，几种基本的数据类型和用法，还是有点感悟的，有些人，不管他们说你什么，讲你什么，你都不必理会，哪怕是污蔑，是扭曲，你都不必去解释，也不必憋在心里，做自己就好了，不用担心他人的话语会影响其他你熟悉的人，不必关注他人，做好自己，如果他人因为扭曲的话语而对你产生不好的感受，那也不必理会，你不是这样的，大家能感受到。</p><h1 id="本周总结："><a href="#本周总结：" class="headerlink" title="本周总结："></a>本周总结：</h1><p>最有意义的事可能就是搭建了这个博客网站，学习了基本流程和样式选择，虽然很多都是ai搞得，但是对于我来说，拥有一个网站比构建这个网站更重要，我有一个地方可以分享我的生活和学习日记。还有就是了解了一下redis的基本操作和数据结构，买了一本云计算和分布式的书来看，先慢慢总结吧，明天吧Go语言程序设计的书评写好，再把go高级编程随便看一看就把他还回去吧，我目前学还是太吃力了</p>]]></content>
       
