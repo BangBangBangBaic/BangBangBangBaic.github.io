@@ -4,6 +4,19 @@
   
     
     <entry>
+      <title>休息一下</title>
+      <link href="/2025/11/26/%E4%BC%91%E6%81%AF%E4%B8%80%E4%B8%8B/"/>
+      <url>/2025/11/26/%E4%BC%91%E6%81%AF%E4%B8%80%E4%B8%8B/</url>
+      
+        <content type="html"><![CDATA[<p>以后应该很难更新了，脑子好累，玩个好几天吧。</p>]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>后端学习路线</title>
       <link href="/2025/11/24/%E5%90%8E%E7%AB%AF%E5%AD%A6%E4%B9%A0%E8%B7%AF%E7%BA%BF/"/>
       <url>/2025/11/24/%E5%90%8E%E7%AB%AF%E5%AD%A6%E4%B9%A0%E8%B7%AF%E7%BA%BF/</url>
@@ -36,25 +49,6 @@
     
     
     <entry>
-      <title>11月第四周</title>
-      <link href="/2025/11/23/11%E6%9C%88%E7%AC%AC%E5%9B%9B%E5%91%A8/"/>
-      <url>/2025/11/23/11%E6%9C%88%E7%AC%AC%E5%9B%9B%E5%91%A8/</url>
-      
-        <content type="html"><![CDATA[<h1 id="11-24"><a href="#11-24" class="headerlink" title="11.24"></a>11.24</h1><p>昨天忘记写了，哭了，还失眠睡不着</p><h1 id="11-25"><a href="#11-25" class="headerlink" title="11.25"></a>11.25</h1><p>今天朗诵，决定等下再复习一边GO高级编程，我发现速读更适合我，高速看完一遍，再多次看，接下来我还是好好休息，要准备大学生活。<br>我靠只狼好难玩，md被杀了好多次</p>]]></content>
-      
-      
-      <categories>
-          
-          <category> 日记 </category>
-          
-      </categories>
-      
-      
-    </entry>
-    
-    
-    
-    <entry>
       <title>Go web 读书笔记</title>
       <link href="/2025/11/20/Go-web-%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/"/>
       <url>/2025/11/20/Go-web-%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/</url>
@@ -65,101 +59,6 @@
       <categories>
           
           <category> 读书笔记 </category>
-          
-      </categories>
-      
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>基础算法和-个人学习笔记</title>
-      <link href="/2025/11/20/%E5%9F%BA%E7%A1%80%E7%AE%97%E6%B3%95%E5%92%8C-%E4%B8%AA%E4%BA%BA%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
-      <url>/2025/11/20/%E5%9F%BA%E7%A1%80%E7%AE%97%E6%B3%95%E5%92%8C-%E4%B8%AA%E4%BA%BA%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</url>
-      
-        <content type="html"><![CDATA[<h2 id="基础算法"><a href="#基础算法" class="headerlink" title="基础算法"></a>基础算法</h2><blockquote><p>1</p></blockquote><h3 id="贪心"><a href="#贪心" class="headerlink" title="贪心"></a>贪心</h3><pre><code>找到每一次n-1到n的最优解，可以得到近似最优解</code></pre><p>例子：明明找硬币问题，把要找的硬币从大到小排列，每次取面值最大的硬币</p><h3 id="递归"><a href="#递归" class="headerlink" title="递归"></a>递归</h3><pre><code>只考虑第n种情况和以前n-1或n-2的关系，假设n-1和n-2已经是操作结果，从n-1可以推到n，则就可以从1推到n，有点像高中的数列。</code></pre><p>例子：汉诺塔问题，f（n）&#x3D;2f（n-1）+1</p><h3 id="分治"><a href="#分治" class="headerlink" title="分治"></a>分治</h3><pre><code>如果一个问题可以被分为两个部分，就可以用分治的方法，把一个问题分成两个不想关的问题求解</code></pre><p>例子：递归排序算法</p><h3 id="回溯"><a href="#回溯" class="headerlink" title="回溯"></a>回溯</h3><pre><code>就是tmd暴力</code></pre><h3 id="动态规划"><a href="#动态规划" class="headerlink" title="动态规划"></a>动态规划</h3><pre><code>最重要的是理解什么是状态，状态就是某次操作可能导致的局面，比如下棋下到一半，棋盘上有黑有白就是状态。理解状态，下一步就是状态转移，就是上一次状态到下一次状态，并且是满足一定规则的转移那下一步就是理解动态规划了，动态规划是每一次状态转移的最优解并记录下来，动态规划的本质就是递推，反正就是用每一次的最优解求解，可以是从0推到最优解</code></pre><h3 id="剪枝"><a href="#剪枝" class="headerlink" title="剪枝"></a>剪枝</h3><pre><code>暴力的升级版，暴力就是枚举所有情况，剪枝就是去除一些不可能的情况1.可行话剪枝，很普通的方法，就是一定超过约束情况，或者不可能的情况排除2.最优解剪纸，先随便实验出来一个近似解，接下来的最优解一定比这个小于等于，不是最优就排除掉</code></pre><h3 id="前缀和"><a href="#前缀和" class="headerlink" title="前缀和"></a>前缀和</h3><pre><code>就是记录每一次，每个阶段的总数，这样可以方便求一个区间的和</code></pre><h3 id="KMP"><a href="#KMP" class="headerlink" title="KMP"></a>KMP</h3><pre><code>利用next数组记录模板连最大的重复数组，读到不符合的就可以直接往前面几个，然后模板连索引j退回到那个位置。因为要是前缀和后缀相等嘛，而前面相等就可以直接用在后面，所以可以设置一个k来比较每一次的增加的变化，k设置成-1表示前缀指针，在实际索引的前一个</code></pre><h3 id="双指针"><a href="#双指针" class="headerlink" title="双指针"></a>双指针</h3><pre><code>适合于需要上一次最优状态，定位，或者必须扫全局的问题，有两种方法：同边的双指针：快慢指针扫找位置 双边的双指针: 左右指针扫顾全局同边的一般是定位问题：比如我要删除链表的倒数第三个数据/或者快排保留之前的基准数，再交换双边的一般是维持之前的状态：比如接水问题，就是要找到最优水点，用双指针可以把所有贪心的解法扫出来</code></pre>]]></content>
-      
-      
-      <categories>
-          
-          <category> 学习笔记 </category>
-          
-          <category> 算法 </category>
-          
-      </categories>
-      
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>js web的基础交互</title>
-      <link href="/2025/11/20/js-web%E7%9A%84%E5%9F%BA%E7%A1%80%E4%BA%A4%E4%BA%92/"/>
-      <url>/2025/11/20/js-web%E7%9A%84%E5%9F%BA%E7%A1%80%E4%BA%A4%E4%BA%92/</url>
-      
-        <content type="html"><![CDATA[<h2 id="知识梳理"><a href="#知识梳理" class="headerlink" title="知识梳理"></a>知识梳理</h2><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript">    <span class="comment">//链式结构，省略了一些东西</span></span></span><br><span class="line"><span class="language-javascript">    <span class="title function_">fetch</span>(<span class="variable constant_">URL</span>)<span class="comment">//请求网址</span></span></span><br><span class="line"><span class="language-javascript">    .<span class="title function_">then</span>(<span class="function"><span class="params">res</span>=&gt;</span>res.<span class="title function_">json</span>())<span class="comment">//解读网址传来的json数据，res是前面fetchURL获取的</span></span></span><br><span class="line"><span class="language-javascript">    .<span class="title function_">then</span>(<span class="function"><span class="params">data</span>=&gt;</span><span class="variable language_">console</span>.<span class="title function_">log</span>(data))<span class="comment">//这里data=获取前面的json数据</span></span></span><br><span class="line"><span class="language-javascript">    .<span class="title function_">catch</span>(<span class="function"><span class="params">error</span>=&gt;</span><span class="variable language_">console</span>.<span class="title function_">error</span>(error));<span class="comment">//传递数据</span></span></span><br><span class="line"><span class="language-javascript"><span class="keyword">await</span> 需要anyls函数</span></span><br><span class="line"><span class="language-javascript">    <span class="keyword">const</span> res=<span class="keyword">await</span> <span class="title function_">fetch</span>(<span class="variable constant_">URL</span>);</span></span><br><span class="line"><span class="language-javascript">    <span class="keyword">const</span> data=<span class="keyword">await</span> res.<span class="title function_">json</span>();</span></span><br><span class="line"><span class="language-javascript">    <span class="variable language_">console</span>.<span class="title function_">log</span>(data);</span></span><br><span class="line"><span class="language-javascript"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure><p>POST,Heads,body</p><p>Javascript的&#x3D;&gt;，是函数缩略形式<br>打个比方：正常的 <code>function add(a,b){return a+b;}          但是用=&gt;</code> add&#x3D;(a,b)&#x3D;&gt;a+b;<br>         优势：不绑定this，方便嵌套函数</p><p>异步的概念：做家务问题，她可以一边烧开水的同时干别的事，而不是等开水烧开再去干活</p><p>program对象，异步任务表单，表示要干的活<br>最后会返回rejected或者accppt</p><p>WebSocket建立一个通道时时显示<br>下面是时时通信通道</p><pre><code class="language-HTML">&lt;script&gt;const ws=new WebSocket(URL);（这里的URL要用wss形式）ws.onmessage=event=&gt;{    try{        const date=JSON.parse(event.data);    }    catch (e){        error=&gt;console.error(&quot;ERROR&quot;,error);    }    const html=data.map(item=&gt;&#39;&lt;li&gt;${item}&lt;li&gt;&#39;);    document.getElementById(&quot;list&quot;).innerHTML=html;}</code></pre>]]></content>
-      
-      
-      <categories>
-          
-          <category> 学习笔记 </category>
-          
-          <category> 前端技术分享 </category>
-          
-      </categories>
-      
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>汉诺塔-个人算法笔记</title>
-      <link href="/2025/11/20/%E6%B1%89%E8%AF%BA%E5%A1%94-%E4%B8%AA%E4%BA%BA%E7%AE%97%E6%B3%95%E7%AC%94%E8%AE%B0/"/>
-      <url>/2025/11/20/%E6%B1%89%E8%AF%BA%E5%A1%94-%E4%B8%AA%E4%BA%BA%E7%AE%97%E6%B3%95%E7%AC%94%E8%AE%B0/</url>
-      
-        <content type="html"><![CDATA[<h2 id="汉诺塔本质上就是递归算法的缩影"><a href="#汉诺塔本质上就是递归算法的缩影" class="headerlink" title="汉诺塔本质上就是递归算法的缩影"></a>汉诺塔本质上就是递归算法的缩影</h2><p>首先假设上一步已经实现，然后再经由上一步推出下一步的过程，就是递归算法，有点像高中数列知道an-1和an的关系，求通式</p><h2 id="递归实现"><a href="#递归实现" class="headerlink" title="递归实现"></a>递归实现</h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="type">void</span> <span class="title">move</span><span class="params">(<span class="type">int</span> n,<span class="type">int</span> x,<span class="type">int</span> y,<span class="type">int</span> z)</span></span>&#123;</span><br><span class="line">    <span class="built_in">move</span>(n<span class="number">-1</span>,x,y,z);</span><br><span class="line">    cout&lt;&lt;<span class="string">&quot;被取下碟子的是&quot;</span>&lt;&lt;x&lt;&lt;<span class="string">&quot;放到&quot;</span>&lt;&lt;y&lt;&lt;endl;</span><br><span class="line">    <span class="built_in">move</span>(n<span class="number">-1</span>,z,x,y);</span><br><span class="line">&#125;<span class="comment">//借助y把n—1个盘子移到z，再移动第n个盘子到y，再通过第x把n-1个盘子到z</span></span><br></pre></td></tr></table></figure><h2 id="栈实现–其实一样的，不过多加了一下步骤"><a href="#栈实现–其实一样的，不过多加了一下步骤" class="headerlink" title="栈实现–其实一样的，不过多加了一下步骤"></a>栈实现–其实一样的，不过多加了一下步骤</h2><pre><code class="language-C++">arrayStack&lt;T&gt; t[4];for(int i=n;i&gt;0;i--){    t[1].push(i);}void move(int,int,int,int);void move(int n,int x,int y, int z){    move(n-1,x,y,z);    int d=t[x].top();    t[x].pop;    t[y].push(d);    move(n-1,z,x,y);}</code></pre>]]></content>
-      
-      
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>算法分享-并查集-个人笔记</title>
-      <link href="/2025/11/20/%E7%AE%97%E6%B3%95%E5%88%86%E4%BA%AB-%E5%B9%B6%E6%9F%A5%E9%9B%86-%E4%B8%AA%E4%BA%BA%E7%AC%94%E8%AE%B0/"/>
-      <url>/2025/11/20/%E7%AE%97%E6%B3%95%E5%88%86%E4%BA%AB-%E5%B9%B6%E6%9F%A5%E9%9B%86-%E4%B8%AA%E4%BA%BA%E7%AC%94%E8%AE%B0/</url>
-      
-        <content type="html"><![CDATA[<h2 id="2025-10-4笔记"><a href="#2025-10-4笔记" class="headerlink" title="2025 10.4笔记"></a>2025 10.4笔记</h2><p>今日做：<br>1.学习数据结构与算法</p><p>2.玩了火影忍者和瓦</p><p>3.学习了并查集</p><p>4.调整了心态</p><p>5.学习了关于zhai的知识</p><h2 id="知识梳理："><a href="#知识梳理：" class="headerlink" title="知识梳理："></a>知识梳理：</h2><p>并查集是什么？</p><p>作用：抽象的归类，方便理清楚关系，然后统一的整理和操作。</p><p>用法：find和union。</p><p>find的实例就是看看x是不是属于f【】一类的，就比如查查某位同学是不是某各班的。</p><p>union的实例就是把两个类链接起来，比如一个同学是a班，B同学是b班，他们union一起就是一个学校的</p><p>但可能也会出现复杂的关系，比如说a同学首先是a小组，又是a大组，在是a班，再是a学校</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">a同学-&gt;a小组-&gt;a大组-&gt;a班-&gt;a学校</span><br></pre></td></tr></table></figure><p>而在C++想要实现这种层层递进的关系，就只能使用指针，通过地址来实现层层递进的关系，那么问题来了，这样就失去可读性，所以我们想到了一个类似的东西——数组（数组本身可以是地址，通过index查询数据）通过嵌套数组来表示层层递进</p><p>find的实现方法：</p><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="type">int</span> <span class="title">find</span><span class="params">(<span class="type">int</span> x)</span></span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(f[x]!=x)&#123;</span><br><span class="line">        f[x]=<span class="built_in">find</span>(f[x]);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> f[x];</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>在这过程中实现了路径压缩，就是所有的数据都直接链接了根(返回的f[x]为根，那么过程中的find((f[f[x]]))是不是也为根)</p><p>这里还有补充一个概念rk[i]表示i的元素有多少个儿子</p><p>所以怎么实现union？</p><p>就是把两个类归到成一个大类。</p><p>规则：小树靠大树；</p><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="type">bool</span> <span class="title">union</span><span class="params">(<span class="type">int</span> x;<span class="type">int</span> y)</span></span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(<span class="built_in">find</span>(x)==<span class="built_in">find</span>(y))<span class="keyword">return</span> <span class="literal">false</span>;<span class="comment">//没有合并必要</span></span><br><span class="line">    <span class="keyword">if</span>(rk[<span class="built_in">find</span>(x)]&gt;=rk[<span class="built_in">find</span>(y)])f[<span class="built_in">find</span>(y)]=<span class="built_in">find</span>(x);</span><br><span class="line">    <span class="keyword">else</span> f[<span class="built_in">find</span>(x)]=<span class="built_in">find</span>(y);</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>难理解点：1.数组表示理解，学多了指针只会从左向右；<br>         2.递归调用</p><p>有关于栈<br>数组描述</p><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">template</span>&lt;<span class="keyword">typename</span> T&gt;</span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Stack</span>&#123;</span><br><span class="line">    <span class="keyword">private</span>:</span><br><span class="line">    T *data;</span><br><span class="line">    <span class="type">int</span> capcity;</span><br><span class="line">    <span class="type">int</span> index;</span><br><span class="line">    <span class="built_in">Stack</span>(<span class="type">int</span> val=<span class="number">16</span>):<span class="built_in">data</span>(<span class="keyword">new</span> T[val]),<span class="built_in">capacity</span>(val),<span class="built_in">index</span>(<span class="number">0</span>)&#123;&#125;</span><br><span class="line">    ~<span class="built_in">Stack</span>()&#123;<span class="keyword">delete</span>[] data;&#125;</span><br><span class="line">    <span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="type">void</span> <span class="title">push</span><span class="params">(<span class="type">const</span> T&amp;val)</span></span>&#123;</span><br><span class="line">        </span><br><span class="line">        <span class="built_in">tif</span>(index==capacity)<span class="keyword">throw</span> <span class="string">&quot;I love Zhong ning&quot;</span></span><br><span class="line">            data[index++]=val;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="type">void</span> <span class="title">pop</span><span class="params">()</span></span>&#123;</span><br><span class="line">        index--;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function">T&amp; <span class="title">top</span><span class="params">()</span></span>&#123;</span><br><span class="line">        <span class="keyword">return</span> data[index<span class="number">-1</span>];</span><br><span class="line">     &#125;</span><br><span class="line"></span><br><span class="line">&#125;;</span><br><span class="line">index反应了元素的多少，反应下一个元素的位置</span><br></pre></td></tr></table></figure><p>栈的链表实现</p><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">template</span>&lt;<span class="keyword">typename</span> T&gt;</span><br><span class="line">strcut StackNode&#123;</span><br><span class="line">    T data;</span><br><span class="line">    StackNode* next;</span><br><span class="line">    <span class="built_in">StackNode</span>(<span class="type">const</span> T&amp;val):<span class="built_in">data</span>(val),<span class="built_in">next</span>(<span class="literal">nullptr</span>);</span><br><span class="line">&#125;;</span><br><span class="line"><span class="keyword">template</span>&lt;<span class="keyword">typename</span> T&gt;</span><br><span class="line"><span class="keyword">class</span> <span class="title class_">ListStack</span>&#123;</span><br><span class="line">    <span class="keyword">private</span>:</span><br><span class="line">    StackNode&lt;T&gt;* head;</span><br><span class="line">    <span class="keyword">public</span>:</span><br><span class="line">        ~<span class="built_in">ListStack</span>()&#123;</span><br><span class="line">            <span class="keyword">while</span>(head)&#123;</span><br><span class="line">                <span class="built_in">pop</span>();</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    <span class="function"><span class="type">void</span> <span class="title">push</span><span class="params">(<span class="type">const</span> T&amp;val)</span></span>&#123;</span><br><span class="line">        StackNode&lt;T&gt;* current=<span class="keyword">new</span> <span class="built_in">StackNode</span>(val);</span><br><span class="line">        current-&gt;next=head;</span><br><span class="line">        head=current;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function">T&amp; <span class="title">top</span><span class="params">()</span></span>&#123;</span><br><span class="line">      <span class="keyword">return</span> head-&gt;data;  </span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="type">void</span> <span class="title">pop</span><span class="params">()</span></span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(head==<span class="literal">nullptr</span>)<span class="keyword">throw</span> <span class="string">&quot;dad&quot;</span></span><br><span class="line">        StackNode&lt;T&gt;* temp=head;</span><br><span class="line">        head=head-&gt;next;</span><br><span class="line">        <span class="keyword">delete</span> temp;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure><p>抛出异常</p><pre><code class="language-C++">throw std::runtime_error();</code></pre>]]></content>
-      
-      
-      <categories>
-          
-          <category> 学习笔记 </category>
-          
-          <category> 算法 </category>
-          
-      </categories>
-      
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>无能的11月</title>
-      <link href="/2025/11/20/11%E6%9C%88%E7%AC%AC%E4%B8%89%E5%91%A8/"/>
-      <url>/2025/11/20/11%E6%9C%88%E7%AC%AC%E4%B8%89%E5%91%A8/</url>
-      
-        <content type="html"><![CDATA[<h2 id="11-20"><a href="#11-20" class="headerlink" title="11.20"></a>11.20</h2><p>今天是一个平静的一天，我上午生病，发烧，但是莫名其妙感觉发烧状态下学高数很爽，本来因为翘课而拉下的进度一下子就赶上来了，咕咕嘎嘎，感觉是因为今天早上学长和我快问快答的缘故，其实我挺希望被拷打的，可以检验自己的学习程度，追重要的是懒得刷题，这样情景化的题目反而很爽。（或许我每天早起可以拷打拷打自己？）遗憾是的是今天什么都没学，就当休息吧，真的要好好休息。</p><p>下午还做了一个很奇怪的梦，感觉过了一生我靠，梦到28岁和三个女孩子相亲，好可怕，好可怕</p><p>自律还是要继续，不如今天看看毛主席的实践论？</p><h2 id="11-21"><a href="#11-21" class="headerlink" title="11.21"></a>11.21</h2><p>没有看实践论，但是昨天搞了一晚上博客，基本操作是熟悉了，今天看看能不能加评论功能，今天花了三个小时又把GO程序设计看了一遍，我感觉提升不大，但是之前的东西都变得好陌生，重新复习一下也好，不过了解了一下flag包，打算等一下再熟悉一下反射和测试，嘻嘻，希望今天能早睡。</p><h2 id="11-22"><a href="#11-22" class="headerlink" title="11.22"></a>11.22</h2><p>早睡失败，早起失败，今天举办了吃辣大赛，但是今日上午发生的事挺坏的，哎，今天什么都没学，今日好好歇息一会儿吧。只是说有了一些感悟，人其实不能做到十全十美的，你内心想告诉你成为一个情绪稳定的人，一个会做正确的事的人，有时候，你在反思自己的时候就会思考，你要用怎样的方法去挽回。你站在原地，向四面八方散发可能的道路，发现都是错误的，最后，你发现站在原地也是错误的。好吧，言语还是很难描述这种感觉，挺难过的。</p><h1 id="11-23"><a href="#11-23" class="headerlink" title="11.23"></a>11.23</h1><p>今天喝了酒，唱了歌，倒是给我唱爽了，还有就是了解了一下redis是什么东西，几种基本的数据类型和用法，还是有点感悟的，有些人，不管他们说你什么，讲你什么，你都不必理会，哪怕是污蔑，是扭曲，你都不必去解释，也不必憋在心里，做自己就好了，不用担心他人的话语会影响其他你熟悉的人，不必关注他人，做好自己，如果他人因为扭曲的话语而对你产生不好的感受，那也不必理会，你不是这样的，大家能感受到。</p><h1 id="本周总结："><a href="#本周总结：" class="headerlink" title="本周总结："></a>本周总结：</h1><p>最有意义的事可能就是搭建了这个博客网站，学习了基本流程和样式选择，虽然很多都是ai搞得，但是对于我来说，拥有一个网站比构建这个网站更重要，我有一个地方可以分享我的生活和学习日记。还有就是了解了一下redis的基本操作和数据结构，买了一本云计算和分布式的书来看，先慢慢总结吧，明天吧Go语言程序设计的书评写好，再把go高级编程随便看一看就把他还回去吧，我目前学还是太吃力了</p>]]></content>
-      
-      
-      <categories>
-          
-          <category> 生活日记 </category>
           
       </categories>
       
