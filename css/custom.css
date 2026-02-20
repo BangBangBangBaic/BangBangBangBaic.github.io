@@ -1,8 +1,9 @@
 /* 水面倒影+蒙版模糊+彼岸花暗红色混合灰色灰紫色背景（暗色模式） */
-[data-user-color-scheme="dark"] body {
+
+[data-user-color-scheme="dark"] main {
   background: linear-gradient(180deg,
-    #782c3a 0%,   /* 彼岸花暗红 */
-    #50506e 40%,  /* 灰紫 */
-    #23243a 100%  /* 深蓝 */
+    #782c3a 10%,
+    #50506e 40%,
+    #23243a 100%
   );
 }

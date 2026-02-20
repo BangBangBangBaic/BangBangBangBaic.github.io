@@ -36,7 +36,7 @@ h6:hover > .anchorjs-link {
     margin-top: -1rem !important;
   }
 }
-@media (max-width: 79.99vh) {
+@media (max-width: 99.99vh) {
   .scroll-down-bar {
     display: none;
   }
@@ -45,7 +45,14 @@ h6:hover > .anchorjs-link {
   position: relative;
   margin-top: -2rem;
   padding: 3rem 0;
-  background-color: var(--board-bg-color);
+  background: linear-gradient(180deg, rgba(120,44,58,0.32) 0%, rgba(80,80,110,0.22) 50%, rgba(35,36,58,0.32) 100%);
+  backdrop-filter: blur(22px);
+  -webkit-backdrop-filter: blur(22px);
+  box-shadow: 0 4px 24px 0 rgba(0,0,0,0.13);
+  border-radius: 18px;
+  max-width: 650px;
+  width: 90%;
+  margin: 2.5rem auto;
   transition: background-color 0.2s ease-in-out;
   border-radius: 0.5rem;
   z-index: 3;
@@ -878,8 +885,8 @@ i.iconfont {
     --color-mode: "dark";
   }
   :root:not([data-user-color-scheme]) {
-    --body-bg-color: linear-gradient(135deg, #444 0%, #888 40%, #23243a 80%, #3a2352 100%);
-    --board-bg-color: #252d38;
+    --body-bg-color: #23243a;
+    --board-bg-color: #linear-gradient(135deg, #444 0%, #888 40%, #23243a 80%, #3a2352 100%)~;
     --text-color: #c4c6c9;
     --sec-text-color: #a7a9ad;
     --post-text-color: #c4c6c9;
@@ -916,8 +923,8 @@ i.iconfont {
 }
 @media not print {
   [data-user-color-scheme="dark"] {
-    --body-bg-color: linear-gradient(135deg, #444 0%, #888 40%, #23243a 80%, #3a2352 100%);
-    --board-bg-color: #252d38;
+    --body-bg-color: #23243a;
+    --board-bg-color: #linear-gradient(135deg, #444 0%, #888 40%, #23243a 80%, #3a2352 100%)~;
     --text-color: #c4c6c9;
     --sec-text-color: #a7a9ad;
     --post-text-color: #c4c6c9;
