@@ -1,0 +1,891 @@
+
+
+<!DOCTYPE html>
+<html lang="en" data-default-color-scheme=dark>
+
+
+
+<head>
+  <meta charset="UTF-8">
+
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/%E5%B0%8F%E5%BC%97.jpg">
+  <link rel="icon" href="/img/%E5%B0%8F%E5%BC%97.jpg">
+  
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="BangBang">
+  <meta name="keywords" content="">
+  
+    <meta name="description" content="懒人必备！Ent ORM 教程 关键词：类、模板、ORM、Ent、GORM、Schema as Code、代码生成、CRUD、Edge、事务、context   引言相信大家都对“类”和“模板”这些概念不陌生吧！程序员们通过定义好的类或模板，直接生成对应的代码，不仅节省工作量，还大大提升了代码的可读性。 在重构或修改代码时，只需调整类或模板即可，就像工程师根据蓝图建造房子——修改蓝图总比拆房子重盖">
+<meta property="og:type" content="article">
+<meta property="og:title" content="懒人必备！entorm教程来了！">
+<meta property="og:url" content="http://example.com/2026/02/22/%E6%87%92%E4%BA%BA%E5%BF%85%E5%A4%87%EF%BC%81entorm%E6%95%99%E7%A8%8B%E6%9D%A5%E4%BA%86%EF%BC%81/index.html">
+<meta property="og:site_name" content="Hello,World！-BangBang的计算机技术世界">
+<meta property="og:description" content="懒人必备！Ent ORM 教程 关键词：类、模板、ORM、Ent、GORM、Schema as Code、代码生成、CRUD、Edge、事务、context   引言相信大家都对“类”和“模板”这些概念不陌生吧！程序员们通过定义好的类或模板，直接生成对应的代码，不仅节省工作量，还大大提升了代码的可读性。 在重构或修改代码时，只需调整类或模板即可，就像工程师根据蓝图建造房子——修改蓝图总比拆房子重盖">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="http://example.com/img/%E3%80%90%E5%93%B2%E9%A3%8E%E5%A3%81%E7%BA%B8%E3%80%91ATRI-%E4%BA%8C%E6%AC%A1%E5%85%83.png">
+<meta property="article:published_time" content="2026-02-22T14:57:16.000Z">
+<meta property="article:modified_time" content="2026-02-22T15:15:51.909Z">
+<meta property="article:author" content="BangBang">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="http://example.com/img/%E3%80%90%E5%93%B2%E9%A3%8E%E5%A3%81%E7%BA%B8%E3%80%91ATRI-%E4%BA%8C%E6%AC%A1%E5%85%83.png">
+  
+  
+  
+  <title>懒人必备！entorm教程来了！ - Hello,World！-BangBang的计算机技术世界</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/c/font_1749284_5i9bdhy70f8.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/c/font_1736178_k526ubmyhba.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+  
+
+
+
+  
+<link rel="stylesheet" href="/css/custom.css">
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"example.com","root":"/","version":"1.9.8","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"left","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":4},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false},"umami":{"src":null,"website_id":null,"domains":null,"start_time":"2024-01-01T00:00:00.000Z","token":null,"api_server":null}},"search_path":"/local-search.xml","include_content_in_search":true};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+  
+
+
+  
+<meta name="generator" content="Hexo 8.1.1"></head>
+
+
+<body>
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 70vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>Fluid</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/" target="_self">
+                <i class="iconfont icon-home-fill"></i>
+                <span>Home</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/" target="_self">
+                <i class="iconfont icon-archive-fill"></i>
+                <span>Archives</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/" target="_self">
+                <i class="iconfont icon-category-fill"></i>
+                <span>Categories</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/" target="_self">
+                <i class="iconfont icon-user-fill"></i>
+                <span>About</span>
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              <i class="iconfont icon-search"></i>
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">
+              <i class="iconfont icon-dark" id="color-toggle-icon"></i>
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('/img/%E5%BC%97%E7%B3%AF%E7%B3%AF.jpg') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="懒人必备！entorm教程来了！"></span>
+          
+        </div>
+
+        
+          
+  <div class="mt-3">
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2026-02-22 22:57" pubdate>
+          February 22, 2026 pm
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
+        
+          20k words
+        
+      </span>
+    
+
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
+        
+        
+        
+          169 mins
+        
+      </span>
+    
+
+    
+    
+  </div>
+
+
+        
+      </div>
+
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="padding-left: 2rem; margin-right: -1rem">
+    <div id="toc">
+  <p class="toc-header">
+    <i class="iconfont icon-list"></i>
+    <span>Table of Contents</span>
+  </p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <h1 id="seo-header">懒人必备！entorm教程来了！</h1>
+            
+            
+              <div class="markdown-body">
+                
+                <h1 id="懒人必备！Ent-ORM-教程"><a href="#懒人必备！Ent-ORM-教程" class="headerlink" title="懒人必备！Ent ORM 教程"></a>懒人必备！Ent ORM 教程</h1><blockquote>
+<p><strong>关键词</strong>：类、模板、ORM、Ent、GORM、Schema as Code、代码生成、CRUD、Edge、事务、context</p>
+</blockquote>
+<hr>
+<h2 id="引言"><a href="#引言" class="headerlink" title="引言"></a>引言</h2><p>相信大家都对“类”和“模板”这些概念不陌生吧！程序员们通过定义好的类或模板，直接生成对应的代码，不仅节省工作量，还大大提升了代码的可读性。</p>
+<p>在重构或修改代码时，只需调整类或模板即可，就像工程师根据蓝图建造房子——修改蓝图总比拆房子重盖方便多了。</p>
+<p>那么，数据库 ORM（Object-Relational Mapping）框架能不能也这么玩呢？<strong>Ent ORM</strong> 应运而生！Ent ORM 是一种基于对象的数据库映射框架，类似于 GORM，但它更注重以对象为中心进行操作，并且会自动生成代码，超级方便。</p>
+<p>Ent ORM 的核心理念是 <strong>Schema as Code</strong>（模板即代码）。你只需专注编写 Schema 模板，剩下的 CRUD 方法和迁移逻辑 Ent 会自动生成，避免了运行时反射，类型更安全，效率更高。</p>
+<blockquote>
+<p><strong>AI 训话</strong>：Ent 通过生成器自动创建 CRUD 方法和迁移。这避免了运行时反射（GORM 用反射扫描 struct tag），更类型安全。编译时检查错误，让代码变更自动同步到数据库。</p>
+</blockquote>
+<hr>
+<h2 id="快速上手：创建第一个-Schema"><a href="#快速上手：创建第一个-Schema" class="headerlink" title="快速上手：创建第一个 Schema"></a>快速上手：创建第一个 Schema</h2><p>按照 Ent 的操作流程：<strong>先创建模板 Schema，然后生成对象，再对对象进行操作</strong>。</p>
+<h3 id="1-创建-Schema-模板"><a href="#1-创建-Schema-模板" class="headerlink" title="1. 创建 Schema 模板"></a>1. 创建 Schema 模板</h3><p>首先，创建 <code>ent/schema/</code> 文件夹用于存放 Schema 模板代码。</p>
+<p><strong>引入必要包：</strong></p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs go"><span class="hljs-keyword">import</span> (<br>    <span class="hljs-string">&quot;entgo.io/ent&quot;</span><br>    <span class="hljs-string">&quot;entgo.io/ent/schema/field&quot;</span><br>)<br></code></pre></td></tr></table></figure>
+
+<p><strong>定义 Schema：</strong></p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs go"><span class="hljs-keyword">type</span> Men <span class="hljs-keyword">struct</span> &#123;<br>    ent.Schema  <span class="hljs-comment">// 嵌入基类，建立代码关联</span><br>&#125;<br><br><span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-params">(Men)</span></span> Fields() []ent.Field &#123;<br>    <span class="hljs-keyword">return</span> []ent.Field&#123;<br>        field.String(<span class="hljs-string">&quot;name&quot;</span>),  <span class="hljs-comment">// 名字属性</span><br>        field.Int(<span class="hljs-string">&quot;age&quot;</span>),      <span class="hljs-comment">// 年龄属性</span><br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<h4 id="代码逐行解释"><a href="#代码逐行解释" class="headerlink" title="代码逐行解释"></a>代码逐行解释</h4><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs go"><span class="hljs-keyword">type</span> Men <span class="hljs-keyword">struct</span> &#123;<br>    ent.Schema<br>&#125;<br></code></pre></td></tr></table></figure>
+<blockquote>
+<p>赋予结构体 ent.Schema 的属性，告诉 Ent：“这是一个 Schema 模板”。</p>
+</blockquote>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs go"><span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-params">(Men)</span></span> Fields() []ent.Field &#123;<br>    <span class="hljs-keyword">return</span> []ent.Field&#123;<br>        field.String(<span class="hljs-string">&quot;name&quot;</span>),<br>        field.Int(<span class="hljs-string">&quot;age&quot;</span>),<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+<blockquote>
+<p>通过 <code>Fields()</code> 方法赋予模板属性。<code>[]ent.Field</code> 就是“字段总和”。</p>
+</blockquote>
+<h3 id="2-字段选项（Tag）"><a href="#2-字段选项（Tag）" class="headerlink" title="2. 字段选项（Tag）"></a>2. 字段选项（Tag）</h3><p>Ent 使用链式调用（Builder Pattern）来添加选项，类似于方法调用，非常优雅。</p>
+<p><strong>常见选项：</strong></p>
+<ul>
+<li><code>.Default(18)</code>：设置默认值</li>
+<li><code>.Optional()</code>：允许 NULL 值（默认非 NULL）</li>
+<li><code>.Unique()</code>：添加 UNIQUE 约束</li>
+<li><code>.NotEmpty()</code>：字符串非空</li>
+<li><code>.Min(0)</code> &#x2F; <code>.Max(100)</code> &#x2F; <code>.Positive()</code> 等：范围&#x2F;验证</li>
+<li><code>.Comment(&quot;用户年龄&quot;)</code>：添加数据库注释</li>
+<li><code>.StorageKey(&quot;custom_age&quot;)</code>：自定义数据库列名</li>
+<li><code>.StructTag(json:&quot;age,omitempty&quot;)</code>：添加 Go struct 的 tag</li>
+</ul>
+<p><strong>示例：</strong></p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs go">field.String(<span class="hljs-string">&quot;name&quot;</span>).<br>    Comment(<span class="hljs-string">&quot;名字&quot;</span>).<br>    Optional()<br></code></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="代码生成与数据库连接"><a href="#代码生成与数据库连接" class="headerlink" title="代码生成与数据库连接"></a>代码生成与数据库连接</h2><h3 id="1-代码生成"><a href="#1-代码生成" class="headerlink" title="1. 代码生成"></a>1. 代码生成</h3><p>运行命令：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">go generate ./ent<br></code></pre></td></tr></table></figure>
+
+<p>这会根据 Schema 生成 CRUD 方法和相关代码。</p>
+<h3 id="2-连接数据库"><a href="#2-连接数据库" class="headerlink" title="2. 连接数据库"></a>2. 连接数据库</h3><p><strong>GORM 示例：</strong></p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs go"><span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span> &#123;<br>    dsn := <span class="hljs-string">&quot;user:password@tcp(127.0.0.1:3306)/dbname?charset=utf8mb4&amp;parseTime=True&amp;loc=Local&quot;</span><br>    db, _ := gorm.Open(mysql.Open(dsn), &amp;gorm.Config&#123;&#125;)<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<p><strong>Ent ORM 示例：</strong></p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs go"><span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span> &#123;<br>    ctx := context.Background()<br>    client, err := ent.Open(<span class="hljs-string">&quot;mysql&quot;</span>, <span class="hljs-string">&quot;root:pass@tcp(localhost:3306)/test?parseTime=True&quot;</span>)<br>    <span class="hljs-keyword">if</span> err != <span class="hljs-literal">nil</span> &#123;<br>        log.Fatal(err)<br>    &#125;<br>    <span class="hljs-keyword">defer</span> client.Close()<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="自动迁移"><a href="#自动迁移" class="headerlink" title="自动迁移"></a>自动迁移</h2><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs go"><span class="hljs-keyword">if</span> err := client.Schema.Create(ctx); err != <span class="hljs-literal">nil</span> &#123;<br>    log.Fatalf(<span class="hljs-string">&quot;迁移失败: %v&quot;</span>, err)<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="增删改查（CRUD）"><a href="#增删改查（CRUD）" class="headerlink" title="增删改查（CRUD）"></a>增删改查（CRUD）</h2><h3 id="增（Create）"><a href="#增（Create）" class="headerlink" title="增（Create）"></a>增（Create）</h3><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs go">men, err := client.Men.<br>    Create().<br>    SetName(<span class="hljs-string">&quot;奶农&quot;</span>).<br>    SetAge(<span class="hljs-number">222</span>).<br>    Save(ctx)<br><span class="hljs-keyword">if</span> err != <span class="hljs-literal">nil</span> &#123;<br>    log.Fatal(<span class="hljs-string">&quot;奶农创建失败&quot;</span>)<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<h3 id="删（Delete）"><a href="#删（Delete）" class="headerlink" title="删（Delete）"></a>删（Delete）</h3><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs go">err := client.Men.<br>    Delete().<br>    Where(men.ID(<span class="hljs-number">1</span>)).<br>    Exec(ctx)<br><span class="hljs-keyword">if</span> err != <span class="hljs-literal">nil</span> &#123;<br>    <span class="hljs-comment">// 处理错误</span><br>&#125;<br></code></pre></td></tr></table></figure>
+
+<h3 id="改（Update）"><a href="#改（Update）" class="headerlink" title="改（Update）"></a>改（Update）</h3><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs go">_, err := client.Men.<br>    Update().<br>    Where(men.ID(<span class="hljs-number">1</span>)).<br>    SetAge(<span class="hljs-number">123</span>).<br>    Save(ctx)<br><span class="hljs-keyword">if</span> err != <span class="hljs-literal">nil</span> &#123;<br>    <span class="hljs-comment">// 处理错误</span><br>&#125;<br></code></pre></td></tr></table></figure>
+
+<h3 id="查（Query）"><a href="#查（Query）" class="headerlink" title="查（Query）"></a>查（Query）</h3><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs go">p, _ := client.Men.<br>    Query().<br>    Where(men.ID(<span class="hljs-number">1</span>)).<br>    Only(ctx)  <span class="hljs-comment">// 类比 GORM 的 First，返回单个对象；要所有对象就用 All(ctx)</span><br></code></pre></td></tr></table></figure>
+
+<blockquote>
+<p><strong>关键词</strong>：SetName、SetAge、Only、All、CRUD、代码生成</p>
+</blockquote>
+<hr>
+<h2 id="进阶：模板之间的关联（外键-关系）"><a href="#进阶：模板之间的关联（外键-关系）" class="headerlink" title="进阶：模板之间的关联（外键&#x2F;关系）"></a>进阶：模板之间的关联（外键&#x2F;关系）</h2><h3 id="1-一对多（O2M）"><a href="#1-一对多（O2M）" class="headerlink" title="1. 一对多（O2M）"></a>1. 一对多（O2M）</h3><p><strong>User 与 Pet 示例：</strong></p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br></pre></td><td class="code"><pre><code class="hljs go"><span class="hljs-comment">// ent/schema/user.go</span><br><span class="hljs-keyword">import</span> (<br>    <span class="hljs-string">&quot;entgo.io/ent&quot;</span><br>    <span class="hljs-string">&quot;entgo.io/ent/schema/edge&quot;</span><br>    <span class="hljs-string">&quot;entgo.io/ent/schema/field&quot;</span><br>)<br><br><br>    ent.Schema<br>&#125;<br><br><span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-params">(User)</span></span> Fields() []ent.Field &#123;<br>    <span class="hljs-keyword">return</span> []ent.Field&#123;<br>        field.String(<span class="hljs-string">&quot;name&quot;</span>),<br>    &#125;<br>&#125;<br><br><span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-params">(User)</span></span> Edges() []ent.Edge &#123;<br>    <span class="hljs-keyword">return</span> []ent.Edge&#123;<br>        edge.To(<span class="hljs-string">&quot;pets&quot;</span>, Pet.Type).  <span class="hljs-comment">// User -&gt; Pets (O2M)</span><br>            Required().<br>            Comment(<span class="hljs-string">&quot;用户拥有的宠物&quot;</span>),<br>    &#125;<br>&#125;<br><br><span class="hljs-comment">// ent/schema/pet.go</span><br><span class="hljs-keyword">type</span> Pet <span class="hljs-keyword">struct</span> &#123;<br>    ent.Schema<br>&#125;<br><br><span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-params">(Pet)</span></span> Fields() []ent.Field &#123;<br>    <span class="hljs-keyword">return</span> []ent.Field&#123;<br>        field.String(<span class="hljs-string">&quot;name&quot;</span>),<br>    &#125;<br>&#125;<br><br><span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-params">(Pet)</span></span> Edges() []ent.Edge &#123;<br>    <span class="hljs-keyword">return</span> []ent.Edge&#123;<br>        edge.From(<span class="hljs-string">&quot;owner&quot;</span>, User.Type).<br>            Ref(<span class="hljs-string">&quot;pets&quot;</span>).<br>            Unique(),<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<blockquote>
+<p><strong>关键词</strong>：Edge、edge.To、edge.From、Ref、Unique、O2M</p>
+</blockquote>
+<hr>
+<h2 id="多对多（M2M）关系"><a href="#多对多（M2M）关系" class="headerlink" title="多对多（M2M）关系"></a>多对多（M2M）关系</h2><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><code class="hljs go"><span class="hljs-comment">// ent/schema/group.go</span><br><span class="hljs-keyword">type</span> Group <span class="hljs-keyword">struct</span> &#123;<br>    ent.Schema<br>&#125;<br><br><span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-params">(Group)</span></span> Fields() []ent.Field &#123;<br>    <span class="hljs-keyword">return</span> []ent.Field&#123;<br>        field.String(<span class="hljs-string">&quot;name&quot;</span>),<br>    &#125;<br>&#125;<br><br><span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-params">(Group)</span></span> Edges() []ent.Edge &#123;<br>    <span class="hljs-keyword">return</span> []ent.Edge&#123;<br>        edge.To(<span class="hljs-string">&quot;users&quot;</span>, User.Type),  <span class="hljs-comment">// Group -&gt; Users (M2M)</span><br>    &#125;<br>&#125;<br><br><span class="hljs-comment">// ent/schema/user.go</span><br><span class="hljs-keyword">type</span> User <span class="hljs-keyword">struct</span> &#123;<br>    ent.Schema<br>&#125;<br><br><span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-params">(User)</span></span> Fields() []ent.Field &#123;<br>    <span class="hljs-keyword">return</span> []ent.Field&#123;<br>        field.String(<span class="hljs-string">&quot;name&quot;</span>),<br>    &#125;<br>&#125;<br><br><span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-params">(User)</span></span> Edges() []ent.Edge &#123;<br>    <span class="hljs-keyword">return</span> []ent.Edge&#123;<br>        edge.From(<span class="hljs-string">&quot;groups&quot;</span>, Group.Type).<br>            Ref(<span class="hljs-string">&quot;users&quot;</span>),<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="关系操作方法"><a href="#关系操作方法" class="headerlink" title="关系操作方法"></a>关系操作方法</h2><p><strong>常用方法：</strong></p>
+<ul>
+<li>添加关系：<code>AddUsers()</code>、<code>AddGroups()</code></li>
+<li>查询关系：<code>QueryUsers()</code>、<code>QueryGroups()</code></li>
+<li>更新关系：<code>Update().AddGroups()</code>、<code>RemoveGroups()</code>、<code>ClearGroups()</code></li>
+</ul>
+<p><strong>示例：</strong></p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><code class="hljs go"><span class="hljs-keyword">import</span> <span class="hljs-string">&quot;context&quot;</span>  <span class="hljs-comment">// 假设 ctx = context.Background()</span><br><br><span class="hljs-comment">// 创建并链接</span><br>hub, _ := client.Group.Create().SetName(<span class="hljs-string">&quot;GitHub&quot;</span>).Save(ctx)<br>a8m, _ := client.User.Create().SetName(<span class="hljs-string">&quot;a8m&quot;</span>).AddGroups(hub).Save(ctx)  <span class="hljs-comment">// 添加关系</span><br><br><span class="hljs-comment">// 查询用户的组</span><br>groups, _ := a8m.QueryGroups().All(ctx)<br><br><span class="hljs-comment">// 遍历关系（链式查询）</span><br>users, _ := a8m.QueryGroups().<br>    Where(group.Not(group.HasUsersWith(user.Name(<span class="hljs-string">&quot;nati&quot;</span>)))).<br>    QueryUsers().<br>    All(ctx)<br><br><span class="hljs-comment">// 双向朋友关系（自动互加）</span><br>nati, _ := client.User.Create().SetName(<span class="hljs-string">&quot;nati&quot;</span>).AddFriends(a8m).Save(ctx)<br></code></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="高级用法：带属性的多对多（中间表）"><a href="#高级用法：带属性的多对多（中间表）" class="headerlink" title="高级用法：带属性的多对多（中间表）"></a>高级用法：带属性的多对多（中间表）</h2><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><code class="hljs go"><span class="hljs-comment">// ent/schema/friendship.go</span><br><span class="hljs-keyword">type</span> Friendship <span class="hljs-keyword">struct</span> &#123;<br>    ent.Schema<br>&#125;<br><br><span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-params">(Friendship)</span></span> Fields() []ent.Field &#123;<br>    <span class="hljs-keyword">return</span> []ent.Field&#123;<br>        field.Time(<span class="hljs-string">&quot;since&quot;</span>).Default(time.Now),<br>    &#125;<br>&#125;<br><br><span class="hljs-comment">// 在 user.go 的 Edges 中</span><br><span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-params">(User)</span></span> Edges() []ent.Edge &#123;<br>    <span class="hljs-keyword">return</span> []ent.Edge&#123;<br>        edge.To(<span class="hljs-string">&quot;friends&quot;</span>, User.Type).<br>            Through(<span class="hljs-string">&quot;friendships&quot;</span>, Friendship.Type),<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="事务支持（原子性操作）"><a href="#事务支持（原子性操作）" class="headerlink" title="事务支持（原子性操作）"></a>事务支持（原子性操作）</h2><p><strong>场景：</strong> 银行转账，保证扣款和加款要么都成功，要么都失败。</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><code class="hljs go">tx, err := client.Tx(ctx)<br><span class="hljs-keyword">if</span> err != <span class="hljs-literal">nil</span> &#123;<br>    log.Fatal(err)<br>&#125;<br><span class="hljs-keyword">defer</span> <span class="hljs-function"><span class="hljs-keyword">func</span><span class="hljs-params">()</span></span> &#123;<br>    <span class="hljs-keyword">if</span> v := <span class="hljs-built_in">recover</span>(); v != <span class="hljs-literal">nil</span> &#123;<br>        tx.Rollback()<br>        <span class="hljs-built_in">panic</span>(v)<br>    &#125;<br>    <span class="hljs-keyword">if</span> err := tx.Commit(); err != <span class="hljs-literal">nil</span> &#123;<br>        log.Printf(<span class="hljs-string">&quot;提交失败: %v&quot;</span>, err)<br>    &#125;<br>&#125;()<br><br><span class="hljs-comment">// 操作1: 扣款</span><br>nainong, _ := tx.User.Query().Where(user.Name(<span class="hljs-string">&quot;Nainong&quot;</span>)).Only(ctx)<br><span class="hljs-keyword">if</span> nainong.Balance &lt; <span class="hljs-number">50</span> &#123;<br>    <span class="hljs-built_in">panic</span>(<span class="hljs-string">&quot;余额不足&quot;</span>)<br>&#125;<br>nainong.Update().SetBalance(nainong.Balance - <span class="hljs-number">50</span>).Save(ctx)<br><br><span class="hljs-comment">// 操作2: 加款</span><br>bangbang, _ := tx.User.Query().Where(user.Name(<span class="hljs-string">&quot;BangBang&quot;</span>)).Only(ctx)<br>bangbang.Update().SetBalance(bangbang.Balance + <span class="hljs-number">50</span>).Save(ctx)<br></code></pre></td></tr></table></figure>
+
+<blockquote>
+<p><strong>关键词</strong>：事务、Tx、Rollback、Commit、原子性、ACID</p>
+</blockquote>
+<hr>
+<h2 id="上下文（context-Context）"><a href="#上下文（context-Context）" class="headerlink" title="上下文（context.Context）"></a>上下文（context.Context）</h2><p>Go 鼓励显式传递 <code>ctx</code>，便于取消、超时控制，避免阻塞。</p>
+<hr>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>Ent 实现了优雅的 ORM，面向对象操作，借助 Field 和 Edge 表现数据库联系，优雅直观。优势：避免 GORM 的反射，类型安全，代码生成高效。</p>
+<blockquote>
+<p><strong>推荐阅读</strong>：<a target="_blank" rel="noopener" href="https://entgo.io/">Ent 官方文档</a><br>引入<br>相信大家都对“类”和“模板”这些概念不陌生吧！程序员们通过定义好的类或模板，直接生成对应的代码，不仅节省工作量，还大大提升了代码的可读性。这样写代码，是不是超级无敌好用？在重构或修改代码时，只需调整类或模板即可，就像工程师根据蓝图建造房子——修改蓝图总比拆房子重盖方便多了（虽然现实中不太可能）。<br>那么，数据库 ORM（Object-Relational Mapping）框架能不能也这么玩呢？Ent ORM 应运而生！Ent ORM 是一种基于对象的数据库映射框架，类似于 GORM，但它更注重以对象为中心进行操作（不过 GORM 也是对象式的，但 Ent 更贴近面向对象编程范式，最重要的是它会自动生成代码，超级方便）。<br>就像 Go 语言的哲学：“通过通信共享内存，而不是通过共享内存通信”，Ent ORM 也有自己的核心理念——“Schema as Code”，翻译成“模板即代码”。为什么这么说？因为 Ent 不需要你手动编写底层 SQL 或复杂的配置，而是通过定义模板（Schema）来描述数据库结构和操作。Ent 的生成器会自动创建 CRUD 方法和迁移逻辑，这避免了运行时反射（GORM 使用反射扫描 struct tag），从而更类型安全、更高效。我们只需专注编写 Schema 模板，剩下的交给 Ent 处理。<br>AI 训话：Ent 通过生成器自动创建 CRUD 方法和迁移。这避免了运行时反射（GORM 用反射扫描 struct tag），更类型安全。编译时检查错误，让代码变更自动同步到数据库。<br>小试牛刀<br>直接讲解可能不大好理解，所以我们直接上手写代码。按照 Ent 的操作流程：先创建模板 Schema，然后生成对象，再对对象进行操作（很像面向对象的语言）。<br>创建模板 Schema<br>首先，我们创建一个 ent&#x2F;schema&#x2F; 文件夹，用来存放 Schema 模板代码。下面的编写就在这里面。<br>为了方便理解，先引入必要的包（后面例子中会省略，但实际代码中必须有）：<br>Go<br>import (<br>    “entgo.io&#x2F;ent”<br>    “entgo.io&#x2F;ent&#x2F;schema&#x2F;field”<br>)<br>现在，直接上代码：<br>Go<br>type Men struct {<br>    ent.Schema  &#x2F;&#x2F; 嵌入基类，建立代码关联<br>}</p>
+</blockquote>
+<p>func (Men) Fields() []ent.Field {<br>    return []ent.Field{<br>        field.String(“name”),  &#x2F;&#x2F; 加上名字属性<br>        field.Int(“age”),      &#x2F;&#x2F; 加上年龄属性<br>    }<br>}<br>这就是一个最简单的 Schema 定义。在这段代码中，我们定义了一个名为 Men 的模板，它拥有“名字”和“年龄”两个属性。<br>接下来，我们逐行解释代码及其作用。<br>首先：<br>Go<br>type Men struct {<br>    ent.Schema<br>}<br>这赋予了结构体 ent.Schema 的属性，意思就是告诉 Ent：“这是一个 Schema 模板”，Ent 的生成工具就可以据此操作它。打个比方，就像告诉编译器：“我是模板，快来生成我的代码吧！”<br>然后：<br>Go<br>func (Men) Fields() []ent.Field {<br>    return []ent.Field{<br>        field.String(“name”),  &#x2F;&#x2F; 加上名字属性<br>        field.Int(“age”),      &#x2F;&#x2F; 加上年龄属性<br>    }<br>}<br>这一部分就是模板的定义过程。我们通过 Fields() 方法赋予模板属性。以什么样的方式呢？没错，就是代码里的 field 函数，通过给模板添加对应的字段（Field），实现对数据库的操作。这样你能理解 []ent.Field 吗？它就是“字段总和”的意思，一个切片收集所有字段。<br>那我们再添加点别的。我们知道 GORM 中的 tag 可以指定外键、主键、索引、默认值或非空等 SQL 属性，那么 Ent 的 Schema 有吗？<br>Ent ORM 的 Tag（选项）<br>有的！Ent 使用链式调用（Builder Pattern）来添加选项，类似于方法调用，非常优雅。以下是常见选项列表：<br>● 默认值：.Default(18) – 设置默认值。<br>● 可选：.Optional() – 允许 NULL 值（默认是非 NULL）。<br>● 唯一：.Unique() – 添加 UNIQUE 约束。<br>● 非空：.NotEmpty() – 对于字符串，确保不为空字符串（但允许 NULL，除非结合 Optional）。<br>● 范围&#x2F;验证：.Min(0) &#x2F; .Max(100) &#x2F; .Positive() &#x2F; .Negative() &#x2F; .NonNegative() – 对于数字字段的范围检查（编译时或运行时）。<br>● 注释：.Comment(“用户年龄”) – 添加数据库注释（SQL COMMENT）。<br>● 存储名：.StorageKey(“custom_age”) – 自定义数据库列名（默认用字段名）。<br>● Struct Tag：.StructTag(json:”age,omitempty”) – 添加 Go struct 的 tag（如 JSON 序列化）。<br>● 敏感：.Sensitive() – 标记为敏感数据（如密码），在日志&#x2F;调试中隐藏。<br>● 不可变：.Immutable() – 字段创建后不可更新。<br>● Nillable：.Nillable() – 对于值类型（如 int），允许 nil（转为 NULL）。<br>● 其他：对于字符串，还有 .MaxLen(255) &#x2F; .MinLen(1)；对于时间，还有 .Immutable() 等。完整列表见 Ent 文档的 field 包。<br>一般来说，常用的是 Default、Optional 和 Comment。用法就是在字段后打点链式调用：<br>Go<br>field.String(“name”).<br>    Comment(“名字”).<br>    Optional(),  &#x2F;&#x2F; 如果是最后一个，不用逗号；否则加逗号</p>
+<h2 id="引言-1"><a href="#引言-1" class="headerlink" title="引言"></a>引言</h2><p>相信大家都对“类”和“模板”这些概念不陌生吧！程序员们通过定义好的类或模板，直接生成对应的代码，不仅节省工作量，还大大提升了代码的可读性。</p>
+<blockquote>
+<p><strong>关键词</strong>：类、模板、ORM、Ent、GORM、Schema as Code、代码生成</p>
+</blockquote>
+<p>在重构或修改代码时，只需调整类或模板即可，就像工程师根据蓝图建造房子——修改蓝图总比拆房子重盖方便多了。</p>
+<p>那么，数据库 ORM（Object-Relational Mapping）框架能不能也这么玩呢？<strong>Ent ORM</strong> 应运而生！Ent ORM 是一种基于对象的数据库映射框架，类似于 GORM，但它更注重以对象为中心进行操作，并且会自动生成代码，超级方便。</p>
+<p>Ent ORM 的核心理念是 <strong>Schema as Code</strong>（模板即代码）。你只需专注编写 Schema 模板，剩下的 CRUD 方法和迁移逻辑 Ent 会自动生成，避免了运行时反射，类型更安全，效率更高。</p>
+<blockquote>
+<p><strong>AI 训话</strong>：Ent 通过生成器自动创建 CRUD 方法和迁移。这避免了运行时反射（GORM 用反射扫描 struct tag），更类型安全。编译时检查错误，让代码变更自动同步到数据库。</p>
+</blockquote>
+<hr>
+<h2 id="快速上手：创建第一个-Schema-1"><a href="#快速上手：创建第一个-Schema-1" class="headerlink" title="快速上手：创建第一个 Schema"></a>快速上手：创建第一个 Schema</h2><p>按照 Ent 的操作流程：<strong>先创建模板 Schema，然后生成对象，再对对象进行操作</strong>。</p>
+<h3 id="1-创建-Schema-模板-1"><a href="#1-创建-Schema-模板-1" class="headerlink" title="1. 创建 Schema 模板"></a>1. 创建 Schema 模板</h3><p>首先，创建 <code>ent/schema/</code> 文件夹用于存放 Schema 模板代码。</p>
+<p><strong>引入必要包：</strong></p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs go"><span class="hljs-keyword">import</span> (<br>    <span class="hljs-string">&quot;entgo.io/ent&quot;</span><br>    <span class="hljs-string">&quot;entgo.io/ent/schema/field&quot;</span><br>)<br></code></pre></td></tr></table></figure>
+
+<p><strong>定义 Schema：</strong></p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs go"><span class="hljs-keyword">type</span> Men <span class="hljs-keyword">struct</span> &#123;<br>    ent.Schema  <span class="hljs-comment">// 嵌入基类，建立代码关联</span><br>&#125;<br><br><span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-params">(Men)</span></span> Fields() []ent.Field &#123;<br>    <span class="hljs-keyword">return</span> []ent.Field&#123;<br>        field.String(<span class="hljs-string">&quot;name&quot;</span>),  <span class="hljs-comment">// 名字属性</span><br>        field.Int(<span class="hljs-string">&quot;age&quot;</span>),      <span class="hljs-comment">// 年龄属性</span><br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<p>这就是一个最简单的 Schema 定义。我们定义了一个名为 <code>Men</code> 的模板，它拥有“名字”和“年龄”两个属性。</p>
+<h4 id="代码逐行解释-1"><a href="#代码逐行解释-1" class="headerlink" title="代码逐行解释"></a>代码逐行解释</h4><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs go"><span class="hljs-keyword">type</span> Men <span class="hljs-keyword">struct</span> &#123;<br>    ent.Schema<br>&#125;<br></code></pre></td></tr></table></figure>
+<blockquote>
+<p>赋予结构体 ent.Schema 的属性，告诉 Ent：“这是一个 Schema 模板”。</p>
+</blockquote>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs go"><span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-params">(Men)</span></span> Fields() []ent.Field &#123;<br>    <span class="hljs-keyword">return</span> []ent.Field&#123;<br>        field.String(<span class="hljs-string">&quot;name&quot;</span>),<br>        field.Int(<span class="hljs-string">&quot;age&quot;</span>),<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+<blockquote>
+<p>通过 <code>Fields()</code> 方法赋予模板属性。<code>[]ent.Field</code> 就是“字段总和”。</p>
+</blockquote>
+<h3 id="2-字段选项（Tag）-1"><a href="#2-字段选项（Tag）-1" class="headerlink" title="2. 字段选项（Tag）"></a>2. 字段选项（Tag）</h3><p>Ent 使用链式调用（Builder Pattern）来添加选项，类似于方法调用，非常优雅。</p>
+<p><strong>常见选项：</strong></p>
+<ul>
+<li><code>.Default(18)</code>：设置默认值</li>
+<li><code>.Optional()</code>：允许 NULL 值（默认非 NULL）</li>
+<li><code>.Unique()</code>：添加 UNIQUE 约束</li>
+<li><code>.NotEmpty()</code>：字符串非空</li>
+<li><code>.Min(0)</code> &#x2F; <code>.Max(100)</code> &#x2F; <code>.Positive()</code> 等：范围&#x2F;验证</li>
+<li><code>.Comment(&quot;用户年龄&quot;)</code>：添加数据库注释</li>
+<li><code>.StorageKey(&quot;custom_age&quot;)</code>：自定义数据库列名</li>
+<li><code>.StructTag(json:&quot;age,omitempty&quot;)</code>：添加 Go struct 的 tag</li>
+</ul>
+<p><strong>示例：</strong></p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs go">field.String(<span class="hljs-string">&quot;name&quot;</span>).<br>    Comment(<span class="hljs-string">&quot;名字&quot;</span>).<br>    Optional()<br></code></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="代码生成与数据库连接-1"><a href="#代码生成与数据库连接-1" class="headerlink" title="代码生成与数据库连接"></a>代码生成与数据库连接</h2><h3 id="1-代码生成-1"><a href="#1-代码生成-1" class="headerlink" title="1. 代码生成"></a>1. 代码生成</h3><p>运行命令：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">go generate ./ent<br></code></pre></td></tr></table></figure>
+
+<p>这会根据 Schema 生成 CRUD 方法和相关代码。</p>
+<h3 id="2-连接数据库-1"><a href="#2-连接数据库-1" class="headerlink" title="2. 连接数据库"></a>2. 连接数据库</h3><p><strong>GORM 示例：</strong></p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs go"><span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span> &#123;<br>    dsn := <span class="hljs-string">&quot;user:password@tcp(127.0.0.1:3306)/dbname?charset=utf8mb4&amp;parseTime=True&amp;loc=Local&quot;</span><br>    db, _ := gorm.Open(mysql.Open(dsn), &amp;gorm.Config&#123;&#125;)<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<p><strong>Ent ORM 示例：</strong></p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs go"><span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span> &#123;<br>    ctx := context.Background()<br>    client, err := ent.Open(<span class="hljs-string">&quot;mysql&quot;</span>, <span class="hljs-string">&quot;root:pass@tcp(localhost:3306)/test?parseTime=True&quot;</span>)<br>    <span class="hljs-keyword">if</span> err != <span class="hljs-literal">nil</span> &#123;<br>        log.Fatal(err)<br>    &#125;<br>    <span class="hljs-keyword">defer</span> client.Close()<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="自动迁移-1"><a href="#自动迁移-1" class="headerlink" title="自动迁移"></a>自动迁移</h2><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs go"><span class="hljs-keyword">if</span> err := client.Schema.Create(ctx); err != <span class="hljs-literal">nil</span> &#123;<br>    log.Fatalf(<span class="hljs-string">&quot;迁移失败: %v&quot;</span>, err)<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="增删改查（CRUD）-1"><a href="#增删改查（CRUD）-1" class="headerlink" title="增删改查（CRUD）"></a>增删改查（CRUD）</h2><h3 id="增（Create）-1"><a href="#增（Create）-1" class="headerlink" title="增（Create）"></a>增（Create）</h3><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs go">men, err := client.Men.<br>    Create().<br>    SetName(<span class="hljs-string">&quot;奶农&quot;</span>).<br>    SetAge(<span class="hljs-number">222</span>).<br>    Save(ctx)<br><span class="hljs-keyword">if</span> err != <span class="hljs-literal">nil</span> &#123;<br>    log.Fatal(<span class="hljs-string">&quot;奶农创建失败&quot;</span>)<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<h3 id="删（Delete）-1"><a href="#删（Delete）-1" class="headerlink" title="删（Delete）"></a>删（Delete）</h3><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs go">err := client.Men.<br>    Delete().<br>    Where(men.ID(<span class="hljs-number">1</span>)).<br>    Exec(ctx)<br><span class="hljs-keyword">if</span> err != <span class="hljs-literal">nil</span> &#123;<br>    <span class="hljs-comment">// 处理错误</span><br>&#125;<br></code></pre></td></tr></table></figure>
+
+<h3 id="改（Update）-1"><a href="#改（Update）-1" class="headerlink" title="改（Update）"></a>改（Update）</h3><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs go">_, err := client.Men.<br>    Update().<br>    Where(men.ID(<span class="hljs-number">1</span>)).<br>    SetAge(<span class="hljs-number">123</span>).<br>    Save(ctx)<br><span class="hljs-keyword">if</span> err != <span class="hljs-literal">nil</span> &#123;<br>    <span class="hljs-comment">// 处理错误</span><br>&#125;<br></code></pre></td></tr></table></figure>
+
+<h3 id="查（Query）-1"><a href="#查（Query）-1" class="headerlink" title="查（Query）"></a>查（Query）</h3><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs go">p, _ := client.Men.<br>    Query().<br>    Where(men.ID(<span class="hljs-number">1</span>)).<br>    Only(ctx)  <span class="hljs-comment">// 类比 GORM 的 First，返回单个对象；要所有对象就用 All(ctx)</span><br></code></pre></td></tr></table></figure>
+
+<blockquote>
+<p><strong>关键词</strong>：SetName、SetAge、Only、All、CRUD、代码生成</p>
+</blockquote>
+<hr>
+<h2 id="进阶：模板之间的关联（外键-关系）-1"><a href="#进阶：模板之间的关联（外键-关系）-1" class="headerlink" title="进阶：模板之间的关联（外键&#x2F;关系）"></a>进阶：模板之间的关联（外键&#x2F;关系）</h2><h3 id="1-一对多（O2M）-1"><a href="#1-一对多（O2M）-1" class="headerlink" title="1. 一对多（O2M）"></a>1. 一对多（O2M）</h3><p><strong>User 与 Pet 示例：</strong></p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br></pre></td><td class="code"><pre><code class="hljs go"><span class="hljs-comment">// ent/schema/user.go</span><br><span class="hljs-keyword">import</span> (<br>    <span class="hljs-string">&quot;entgo.io/ent&quot;</span><br>    <span class="hljs-string">&quot;entgo.io/ent/schema/edge&quot;</span><br>    <span class="hljs-string">&quot;entgo.io/ent/schema/field&quot;</span><br>)<br><br><span class="hljs-keyword">type</span> User <span class="hljs-keyword">struct</span> &#123;<br>    ent.Schema<br>&#125;<br><br><span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-params">(User)</span></span> Fields() []ent.Field &#123;<br>    <span class="hljs-keyword">return</span> []ent.Field&#123;<br>        field.String(<span class="hljs-string">&quot;name&quot;</span>),<br>    &#125;<br>&#125;<br><br><span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-params">(User)</span></span> Edges() []ent.Edge &#123;<br>    <span class="hljs-keyword">return</span> []ent.Edge&#123;<br>        edge.To(<span class="hljs-string">&quot;pets&quot;</span>, Pet.Type).  <span class="hljs-comment">// User -&gt; Pets (O2M)</span><br>            Required().<br>            Comment(<span class="hljs-string">&quot;用户拥有的宠物&quot;</span>),<br>    &#125;<br>&#125;<br><br><span class="hljs-comment">// ent/schema/pet.go</span><br><span class="hljs-keyword">type</span> Pet <span class="hljs-keyword">struct</span> &#123;<br>    ent.Schema<br>&#125;<br><br><span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-params">(Pet)</span></span> Fields() []ent.Field &#123;<br>    <span class="hljs-keyword">return</span> []ent.Field&#123;<br>        field.String(<span class="hljs-string">&quot;name&quot;</span>),<br>    &#125;<br>&#125;<br><br><span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-params">(Pet)</span></span> Edges() []ent.Edge &#123;<br>    <span class="hljs-keyword">return</span> []ent.Edge&#123;<br>        edge.From(<span class="hljs-string">&quot;owner&quot;</span>, User.Type).<br>            Ref(<span class="hljs-string">&quot;pets&quot;</span>).<br>            Unique(),<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<blockquote>
+<p><strong>关键词</strong>：Edge、edge.To、edge.From、Ref、Unique、O2M</p>
+</blockquote>
+<hr>
+<h2 id="多对多（M2M）关系-1"><a href="#多对多（M2M）关系-1" class="headerlink" title="多对多（M2M）关系"></a>多对多（M2M）关系</h2><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><code class="hljs go"><span class="hljs-comment">// ent/schema/group.go</span><br><span class="hljs-keyword">type</span> Group <span class="hljs-keyword">struct</span> &#123;<br>    ent.Schema<br>&#125;<br><br><span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-params">(Group)</span></span> Fields() []ent.Field &#123;<br>    <span class="hljs-keyword">return</span> []ent.Field&#123;<br>        field.String(<span class="hljs-string">&quot;name&quot;</span>),<br>    &#125;<br>&#125;<br><br><span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-params">(Group)</span></span> Edges() []ent.Edge &#123;<br>    <span class="hljs-keyword">return</span> []ent.Edge&#123;<br>        edge.To(<span class="hljs-string">&quot;users&quot;</span>, User.Type),  <span class="hljs-comment">// Group -&gt; Users (M2M)</span><br>    &#125;<br>&#125;<br><br><span class="hljs-comment">// ent/schema/user.go</span><br><span class="hljs-keyword">type</span> User <span class="hljs-keyword">struct</span> &#123;<br>    ent.Schema<br>&#125;<br><br><span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-params">(User)</span></span> Fields() []ent.Field &#123;<br>    <span class="hljs-keyword">return</span> []ent.Field&#123;<br>        field.String(<span class="hljs-string">&quot;name&quot;</span>),<br>    &#125;<br>&#125;<br><br><span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-params">(User)</span></span> Edges() []ent.Edge &#123;<br>    <span class="hljs-keyword">return</span> []ent.Edge&#123;<br>        edge.From(<span class="hljs-string">&quot;groups&quot;</span>, Group.Type).<br>            Ref(<span class="hljs-string">&quot;users&quot;</span>),<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="关系操作方法-1"><a href="#关系操作方法-1" class="headerlink" title="关系操作方法"></a>关系操作方法</h2><p><strong>常用方法：</strong></p>
+<ul>
+<li>添加关系：<code>AddUsers()</code>、<code>AddGroups()</code></li>
+<li>查询关系：<code>QueryUsers()</code>、<code>QueryGroups()</code></li>
+<li>更新关系：<code>Update().AddGroups()</code>、<code>RemoveGroups()</code>、<code>ClearGroups()</code></li>
+</ul>
+<p><strong>示例：</strong></p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><code class="hljs go"><span class="hljs-comment">// 创建并链接</span><br>hub, _ := client.Group.Create().SetName(<span class="hljs-string">&quot;GitHub&quot;</span>).Save(ctx)<br>    Where(men.ID(<span class="hljs-number">1</span>)).<br>    SetAge(<span class="hljs-number">123</span>).<br>    Save(ctx)<br>groups, _ := a8m.QueryGroups().All(ctx)<br><br><span class="hljs-comment">// 遍历关系（链式查询）</span><br>users, _ := a8m.QueryGroups().<br>    Where(group.Not(group.HasUsersWith(user.Name(<span class="hljs-string">&quot;nati&quot;</span>)))).<br>    QueryUsers().<br>    All(ctx)<br><br><span class="hljs-comment">// 双向朋友关系（自动互加）</span><br>nati, _ := client.User.Create().SetName(<span class="hljs-string">&quot;nati&quot;</span>).AddFriends(a8m).Save(ctx)<br></code></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="高级用法：带属性的多对多（中间表）-1"><a href="#高级用法：带属性的多对多（中间表）-1" class="headerlink" title="高级用法：带属性的多对多（中间表）"></a>高级用法：带属性的多对多（中间表）</h2><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><code class="hljs go"><span class="hljs-comment">// ent/schema/friendship.go</span><br><span class="hljs-keyword">type</span> Friendship <span class="hljs-keyword">struct</span> &#123;<br>    ent.Schema<br>&#125;<br><br><span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-params">(Friendship)</span></span> Fields() []ent.Field &#123;<br>    <span class="hljs-keyword">return</span> []ent.Field&#123;<br>        field.Time(<span class="hljs-string">&quot;since&quot;</span>).Default(time.Now),<br>    &#125;<br>&#125;<br><br><span class="hljs-comment">// 在 user.go 的 Edges 中</span><br><span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-params">(User)</span></span> Edges() []ent.Edge &#123;<br>    <span class="hljs-keyword">return</span> []ent.Edge&#123;<br>        edge.To(<span class="hljs-string">&quot;friends&quot;</span>, User.Type).<br>            Through(<span class="hljs-string">&quot;friendships&quot;</span>, Friendship.Type),<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="事务支持（原子性操作）-1"><a href="#事务支持（原子性操作）-1" class="headerlink" title="事务支持（原子性操作）"></a>事务支持（原子性操作）</h2><p><strong>场景：</strong> 银行转账，保证扣款和加款要么都成功，要么都失败。</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><code class="hljs go">tx, err := client.Tx(ctx)<br><span class="hljs-keyword">if</span> err != <span class="hljs-literal">nil</span> &#123;<br>    log.Fatal(err)<br>&#125;<br><span class="hljs-keyword">defer</span> <span class="hljs-function"><span class="hljs-keyword">func</span><span class="hljs-params">()</span></span> &#123;<br>    <span class="hljs-keyword">if</span> v := <span class="hljs-built_in">recover</span>(); v != <span class="hljs-literal">nil</span> &#123;<br>        tx.Rollback()<br>        <span class="hljs-built_in">panic</span>(v)<br>    &#125;<br>    <span class="hljs-keyword">if</span> err := tx.Commit(); err != <span class="hljs-literal">nil</span> &#123;<br>        log.Printf(<span class="hljs-string">&quot;提交失败: %v&quot;</span>, err)<br>    &#125;<br>&#125;()<br><br><span class="hljs-comment">// 操作1: 扣款</span><br>nainong, _ := tx.User.Query().Where(user.Name(<span class="hljs-string">&quot;Nainong&quot;</span>)).Only(ctx)<br><span class="hljs-keyword">if</span> nainong.Balance &lt; <span class="hljs-number">50</span> &#123;<br>    <span class="hljs-built_in">panic</span>(<span class="hljs-string">&quot;余额不足&quot;</span>)<br>&#125;<br><span class="hljs-keyword">if</span> err != <span class="hljs-literal">nil</span> &#123;<br><br><span class="hljs-comment">// 操作2: 加款</span><br>bangbang, _ := tx.User.Query().Where(user.Name(<span class="hljs-string">&quot;BangBang&quot;</span>)).Only(ctx)<br>bangbang.Update().SetBalance(bangbang.Balance + <span class="hljs-number">50</span>).Save(ctx)<br></code></pre></td></tr></table></figure>
+
+<blockquote>
+<p><strong>关键词</strong>：事务、Tx、Rollback、Commit、原子性、ACID</p>
+</blockquote>
+<hr>
+<h2 id="上下文（context-Context）-1"><a href="#上下文（context-Context）-1" class="headerlink" title="上下文（context.Context）"></a>上下文（context.Context）</h2><p>Go 鼓励显式传递 <code>ctx</code>，便于取消、超时控制，避免阻塞。</p>
+<hr>
+<h2 id="总结-1"><a href="#总结-1" class="headerlink" title="总结"></a>总结</h2><p>Ent 实现了优雅的 ORM，面向对象操作，借助 Field 和 Edge 表现数据库联系，优雅直观。优势：避免 GORM 的反射，类型安全，代码生成高效。</p>
+<blockquote>
+<p><strong>推荐阅读</strong>：<a target="_blank" rel="noopener" href="https://entgo.io/">Ent 官方文档</a><br>&#x2F;&#x2F; 处理错误<br>}<br>查：<br>Go<br>p, _ :&#x3D; client.Men.<br>    Query().<br>    Where(men.ID(1)).<br>    Only(ctx)  &#x2F;&#x2F; 类比 GORM 的 First，返回单个对象；要所有对象就用 All(ctx)<br>看了这些，你大概对 Ent 以对象为基础的操作有一定了解。每条语句都有“主语 + 谓语 + 宾语”的结构，可以归纳使用方法。<br>PS：初学者可能会疑惑为什么能直接用 SetName 等（我一开始也这样），“我明明没定义这个函数，怎么能用呢？”这是典型的 C++ 思维。Go 支持代码生成：Ent 根据 Schema Fields 自动生成这些方法（如 SetName 是基于 “name” 字段生成的）。类似于 Go 测试的前缀（TestFunc 或 BenchmarkFunc），Ent 用前缀如 Set + 字段名动态生成。<br>进阶玩法：模板之间的关联（外键）<br>如果我们刚刚定义的是孤立的对象，那怎么实现对象间的联系呢？<br>为了帮助初学者理解，想象对象就是一个个图形。我们现实中用连线把图形链接起来；Ent 也这样，用 “Edge” 把模板联系起来。<br>Edge 相当于带箭头的直线，表示从属关系。使用 edge.To(name, target.Type) 定义拥有方（Owning Edge），如 edge.To(“pets”, Pet.Type)。使用 edge.From(name, source.Type).Ref(“owning_edge_name”) 定义反向引用。选项链式调用：如 .Unique()（唯一性）、.Required()（非空）、.StorageKey(edge.Column(“custom_id”))（自定义列名）。<br>直接举例：主人和宠物。一个主人可以有多个宠物，一个宠物只有一个主人（就像你喜欢一个人，但她不喜欢你 QWQ）。<br>Go<br>&#x2F;&#x2F; ent&#x2F;schema&#x2F;user.go<br>import (<br>    “entgo.io&#x2F;ent”<br>    “entgo.io&#x2F;ent&#x2F;schema&#x2F;edge”<br>    “entgo.io&#x2F;ent&#x2F;schema&#x2F;field”<br>)</p>
+</blockquote>
+<p>type User struct {<br>    ent.Schema<br>}</p>
+<p>func (User) Fields() []ent.Field {<br>    return []ent.Field{<br>        field.String(“name”),<br>    }<br>}</p>
+<p>func (User) Edges() []ent.Edge {<br>    return []ent.Edge{<br>        edge.To(“pets”, Pet.Type).  &#x2F;&#x2F; Owning: User -&gt; Pets (O2M)<br>            Required().             &#x2F;&#x2F; 强制非空（从 v0.10+）<br>            Comment(“用户拥有的宠物”), &#x2F;&#x2F; 添加注释<br>    }<br>}</p>
+<p>&#x2F;&#x2F; ent&#x2F;schema&#x2F;pet.go<br>type Pet struct {<br>    ent.Schema<br>}</p>
+<p>func (Pet) Fields() []ent.Field {<br>    return []ent.Field{<br>        field.String(“name”),<br>    }<br>}</p>
+<p>func (Pet) Edges() []ent.Edge {<br>    return []ent.Edge{<br>        edge.From(“owner”, User.Type).<br>            Ref(“pets”).            &#x2F;&#x2F; 引用 User 的 “pets” 边<br>            Unique(),               &#x2F;&#x2F; M2O（多个 Pet 指向同一 User，但每个 Pet 唯一 Owner）<br>    }<br>}<br>Fields 部分就不解释了，直接讲 Edge。就像刚刚说的，Ent 定义 Schema 然后赋予 Fields，这个模板的关系算不算属性呢？答案是算的。<br>和 Fields 类似，Edge 的定义也是基于对象的：edge.To 表示“我是谁的主人”（外键在被拥有方）；edge.From 表示“我的主人是谁”。同样的，Edge 有修饰标签如 .Unique() 表示独一无二。PS：默认允许多个连接（一只奶龙只能有一个贝利亚，而贝利亚可以有很多个奶龙）。具体选项可以自己搜索。<br>多对多的实现<br>正常情况下，不只简单从属关系，世界这么大，一般包罗万象。为了表示多对多，Ent 用 Ref（引用）实现。我们用 To 和 From 表示从属，一个 To 对应一个 From，如果再建一对太繁琐。那怎么办？借用现有边呢？答案就是 Ref。<br>Go<br>&#x2F;&#x2F; ent&#x2F;schema&#x2F;group.go<br>type Group struct {<br>    ent.Schema<br>}</p>
+<p>func (Group) Fields() []ent.Field {<br>    return []ent.Field{<br>        field.String(“name”),<br>    }<br>}</p>
+<p>func (Group) Edges() []ent.Edge {<br>    return []ent.Edge{<br>        edge.To(“users”, User.Type),  &#x2F;&#x2F; Owning: Group -&gt; Users (M2M)<br>    }<br>}</p>
+<p>&#x2F;&#x2F; ent&#x2F;schema&#x2F;user.go<br>type User struct {<br>    ent.Schema<br>}</p>
+<p>func (User) Fields() []ent.Field {<br>    return []ent.Field{<br>        field.String(“name”),<br>    }<br>}</p>
+<p>func (User) Edges() []ent.Edge {<br>    return []ent.Edge{<br>        edge.From(“groups”, Group.Type).<br>            Ref(“users”),  &#x2F;&#x2F; Back-ref: User &lt;- Groups (M2M)<br>    }<br>}<br>这是一个简单例子：一个人可以归类到很多组，一个组可以拥有很多人，是鲜明的多对多关系。相比刚刚的代码，只多了一个 Ref，表示引用这条边来实现相互指向 QWQ。<br>对从属关系操作<br>既然用边实现对象联系，那怎么顺着边查询另一个对象呢？<br>答案是：关键字 + Schema 名。这样看可能抽象，但看代码就懂了。就拿 Group 和 User 举例：<br>● 创建&#x2F;添加：AddUsers()、AddGroups()<br>● 查询：QueryUsers()、QueryGroups()<br>● 更新：Update().AddGroups()、RemoveGroups()、ClearGroups()<br>都是“关键字 + Schema 名”的形式。直接看代码：<br>Go<br>import “context”  &#x2F;&#x2F; 假设 ctx &#x3D; context.Background()</p>
+<p>&#x2F;&#x2F; 创建并链接<br>hub, _ :&#x3D; client.Group.Create().SetName(“GitHub”).Save(ctx)<br>a8m, _ :&#x3D; client.User.Create().SetName(“a8m”).AddGroups(hub).Save(ctx)  &#x2F;&#x2F; 添加关系</p>
+<p>&#x2F;&#x2F; 查询用户的组<br>groups, _ :&#x3D; a8m.QueryGroups().All(ctx)</p>
+<p>&#x2F;&#x2F; 遍历关系（链式查询）<br>users, _ :&#x3D; a8m.QueryGroups().<br>    Where(group.Not(group.HasUsersWith(user.Name(“nati”)))).  &#x2F;&#x2F; 过滤<br>    QueryUsers().<br>    All(ctx)</p>
+<p>&#x2F;&#x2F; 双向朋友关系（自动互加）<br>nati, _ :&#x3D; client.User.Create().SetName(“nati”).AddFriends(a8m).Save(ctx)<br>其中 HasUsersWith 也是关键字 + Schema 的形式，表示“是否有特定用户”（结合刚刚解释，虽然没定义函数但能用）。<br>详细用法：<br>● 查询：<br>  ○ 直接：a8m.QueryGroups().All(ctx)<br>  ○ 过滤：Where(user.HasGroups())（是否有组）、HasUsersWith(user.Name(“nati”))（条件过滤）<br>  ○ 计数：a8m.QueryGroups().CountX(ctx)<br>  ○ 预加载（避免 N+1）：client.User.Query().WithGroups().All(ctx)<br>  ○ 遍历：链式如上，支持跨关系查询。<br>● 更新：<br>  ○ 添加：user.Update().AddGroups(group1, group2).Save(ctx)<br>  ○ 移除：user.Update().RemoveGroups(group1).Save(ctx)<br>  ○ 清空：user.Update().ClearGroups().Save(ctx)（detach 所有关系）<br>  ○ 不可变：.Immutable() 选项，使关系只能在创建时设置。<br>Edge 的高级用法<br>我们清楚，默认多对多表表示不了所有关系。比如人与人的友谊，不能用简单 Edge 衡量，我们必须体现它的“重量”。于是，在两人联系的 Edge 上添加一个对象，表示友谊属性。请看代码：<br>Go<br>&#x2F;&#x2F; ent&#x2F;schema&#x2F;friendship.go<br>type Friendship struct {<br>    ent.Schema  &#x2F;&#x2F; 嵌入 Ent 的基类，表示这是一个 Schema（类似于数据库表的模板）<br>}</p>
+<p>func (Friendship) Fields() []ent.Field {<br>    return []ent.Field{<br>        field.Time(“since”).Default(time.Now),  &#x2F;&#x2F; 定义一个时间字段 “since”，默认值为当前时间<br>    }<br>}</p>
+<p>&#x2F;&#x2F; 在 user.go 的 Edges 中<br>func (User) Edges() []ent.Edge {<br>    return []ent.Edge{<br>        edge.To(“friends”, User.Type).  &#x2F;&#x2F; 定义 M2M 边的名字和目标类型（这里是自引用，用户到用户）<br>            Through(“friendships”, Friendship.Type),  &#x2F;&#x2F; 指定通过中间 Schema “friendships”（注意小写，Ent 会自动处理表名）<br>    }<br>}<br>可以看到，我们定义了一个 Friendship Schema，让人与人之间的联系多了一个“友谊”属性。这个友谊记录了开始时间（当然不止这个，我们也可以加“分量”，就是不好衡量）。<br>如何保证原子性？事务！<br>情景： 小学生是个银行柜员，专处理转账。这时奶农来找小学生，要转 50 给 BangBang 请他吃肯德基。小学生想：简单，先扣奶农 50，再加 BangBang 50。但事故发生了！奶农生气：“为什么扣款了，但 BangBang 没收到？！”小学生查日志，发现语句只成功一半：扣款了，但没加钱。<br>怎么解决？MySQL 用“事务”保证原子性：把操作合成一个单元，中间出错就回滚，不会一边扣款一边没加。<br>Ent 如何实现事务呢？先看官方注解： Ent 的事务设计遵循“Schema as Code”的原则，通过代码生成提供类型安全的构建器（Builder Pattern），并支持嵌套事务、自定义钩子和错误处理。<br>基础概念：<br>● 定义：事务是一个逻辑操作单元，Ent 用 Tx（Transaction Client）封装它。允许临时修改数据库，结束时提交或回滚。<br>● 为什么需要：并发环境中（如多用户扣库存），单条 SQL 可能数据竞争。事务结合锁确保隔离。<br>● ACID 支持：<br>  ○ 原子性：所有操作作为一个整体。<br>  ○ 一致性：操作前后符合约束（如外键）。<br>  ○ 隔离性：默认数据库级别（如 READ COMMITTED），可自定义。<br>  ○ 持久性：提交后持久化。<br>● 与 GORM 对比：GORM 用 db.Begin() 和 tx.Commit()；Ent 用 client.Tx(ctx)，更类型安全（生成方法在 Tx 上可用），避免反射。<br>总结：先创建事务客户端：</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs Go">tx, err := client.Tx(ctx)<br>出错就 tx.Rollback()。其他增删改查一样，但客户端换成 tx。<br>评鉴代码：<br></code></pre></td></tr></table></figure>
+
+<pre><code class="language-Go">package main
+
+import (
+    &quot;context&quot;
+    &quot;log&quot;
+    &quot;yourproject/ent&quot;
+    &quot;yourproject/ent/user&quot;
+)
+
+func main() {
+    ctx := context.Background()
+    client, err := ent.Open(&quot;mysql&quot;, &quot;your_dsn&quot;)
+    if err != nil {
+        log.Fatal(err)
+    }
+    defer client.Close()
+
+    // 开始事务
+    tx, err := client.Tx(ctx)
+    if err != nil {
+        log.Fatal(err)
+    }
+    // 确保回滚（defer 在函数结束执行）
+    defer func() {
+        if v := recover(); v != nil {
+            tx.Rollback()
+            panic(v)  // 重新抛出 panic
+        }
+        if err := tx.Commit(); err != nil {
+            log.Printf(&quot;提交失败: %v&quot;, err)
+        }
+    }()
+
+    // 操作1: 从 Nainong 扣 50
+    nainong, _ := tx.User.Query().Where(user.Name(&quot;Nainong&quot;)).Only(ctx)
+    if nainong.Balance &lt; 50 {
+        panic(&quot;余额不足&quot;)  // 会触发回滚
+    }
+    nainong.Update().SetBalance(nainong.Balance - 50).Save(ctx)
+
+    // 操作2: 给 BangBang 加 50
+    bangbang, _ := tx.User.Query().Where(user.Name(&quot;BangBang&quot;)).Only(ctx)
+    bangbang.Update().SetBalance(bangbang.Balance + 50).Save(ctx)
+
+    // 无错误，defer 会 Commit
+}
+相信这样，你会对事务机制理解更深刻。
+神奇的上下文
+可能大家和我一样疑惑：既然数据不存在 ctx 里，那它有什么用？
+官方文档：Go 因为并发设计，鼓励开发者显式传递 ctx。换言之，这是开发者的责任。
+通过 context.Context，当不需要操作时，可以直接取消它，或设置超时，避免卡住的不必要操作。
+总结：Ent 实现了优雅的 ORM，面向对象操作，借助 Field 和 Edge 表现数据库联系，优雅直观（妈妈再也不用担心我用 GORM 设计多对多表时懵逼了嘻嘻）。优势：避免 GORM 的反射（反射是运行时动态检查 struct，Ent 用生成避免，开销小）。
+</code></pre>
+
+                
+              </div>
+            
+            <hr/>
+            <div>
+              <div class="post-metas my-3">
+  
+  
+</div>
+
+
+              
+  
+
+  <div class="license-box my-3">
+    <div class="license-title">
+      <div>懒人必备！entorm教程来了！</div>
+      <div>http://example.com/2026/02/22/懒人必备！entorm教程来了！/</div>
+    </div>
+    <div class="license-meta">
+      
+        <div class="license-meta-item">
+          <div>Author</div>
+          <div>BangBang</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>Posted on</div>
+          <div>February 22, 2026</div>
+        </div>
+      
+      
+      
+        <div class="license-meta-item">
+          <div>Licensed under</div>
+          <div>
+            
+              
+              
+                <a class="print-no-link" target="_blank" href="https://creativecommons.org/licenses/by/4.0/">
+                  <span class="hint--top hint--rounded" aria-label="BY - Attribution">
+                    <i class="iconfont icon-cc-by"></i>
+                  </span>
+                </a>
+              
+            
+          </div>
+        </div>
+      
+    </div>
+    <div class="license-icon iconfont"></div>
+  </div>
+
+
+
+              
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2026/02/20/hello-world/" title="Hello World">
+                        <span class="hidden-mobile">Hello World</span>
+                        <span class="visible-mobile">Next</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">Search</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">Keyword</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+       <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+    </div>
+  
+  
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.4/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.20.1/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init(Object.assign({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      scrollSmooth    : true,
+      includeTitleTags: true,
+      headingsOffset  : -boardTop,
+    }, CONFIG.toc));
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('tocbot' in window) {
+        tocbot.refresh();
+        var toc = jQuery('#toc');
+        if (toc.length === 0 || !tocbot) {
+          return;
+        }
+        if (toc.find('.toc-list-item').length > 0) {
+          toc.css('visibility', 'visible');
+        }
+      }
+    });
+  });
+</script>
+
+
+  <script src=https://lib.baomitu.com/clipboard.js/2.0.11/clipboard.min.js></script>
+
+  <script>Fluid.plugins.codeWidget();</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/5.0.0/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('anchors' in window) {
+        anchors.removeAll();
+        var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+        var res = [];
+        for (var item of el) {
+          res.push('.markdown-body > ' + item.trim());
+        }
+        if (CONFIG.anchorjs.placement === 'left') {
+          anchors.options.class = 'anchorjs-link-left';
+        }
+        anchors.add(res.join(', '));
+      }
+    });
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script>Fluid.plugins.imageCaption();</script>
+
+  <script  src="/js/local-search.js" ></script>
+
+
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">Blog works best with JavaScript enabled</div>
+  </noscript>
+</body>
+</html>

@@ -1,0 +1,23 @@
+/* 毛玻璃效果与主色调，适用于首页 post 卡片 */
+
+.post-glass {
+  background: rgba(40, 40, 60, 0.7); /* 深色主色调，透明度适中 */
+  border-radius: 18px;
+  box-shadow: 0 4px 24px 0 rgba(0,0,0,0.12);
+  backdrop-filter: blur(12px) saturate(1.2);
+  -webkit-backdrop-filter: blur(12px) saturate(1.2);
+  border: 1px solid rgba(120, 44, 58, 0.18); /* 与 main 配色呼应 */
+  margin-bottom: 2rem;
+  padding: 1.5rem 1rem;
+  transition: box-shadow 0.3s;
+}
+
+.post-glass:hover {
+  box-shadow: 0 8px 32px 0 rgba(120,44,58,0.18);
+}
+
+@media (max-width: 768px) {
+  .post-glass {
+    padding: 1rem 0.5rem;
+  }
+}

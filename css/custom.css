@@ -1,5 +1,12 @@
 /* 水面倒影+蒙版模糊+彼岸花暗红色混合灰色灰紫色背景（暗色模式） */
 
+/* 保证首页 banner 图片完整显示 */
+.index-banner {
+  background-size: contain !important;
+  background-repeat: no-repeat !important;
+  background-position: center top !important;
+}
+
 [data-user-color-scheme="dark"] main {
   background: linear-gradient(180deg,
     #782c3a 10%,
