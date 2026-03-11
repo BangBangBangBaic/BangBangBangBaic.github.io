@@ -1,0 +1,641 @@
+
+
+<!DOCTYPE html>
+<html lang="en" data-default-color-scheme=dark>
+
+
+
+<head>
+  <meta charset="UTF-8">
+
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/%E5%B0%8F%E5%BC%97.jpg">
+  <link rel="icon" href="/img/%E5%B0%8F%E5%BC%97.jpg">
+  
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="BangBang">
+  <meta name="keywords" content="">
+  
+    <meta name="description" content="大家或许都有过这样的迷茫——跟着学习路线学了 Redis、gRPC，转头又去学 Vue、TypeScript，再追一追 Agent、LangChain、LangGraph。学了不少，心里却空落落的，总觉得自己啥都没真正学会，而这些东西 AI 好像都能做得比自己好。 说实话，这个焦虑很正常。AI 迭代的速度，确实不是我们个人能追得上的。但换个角度想：我们从来不需要跑赢 AI，只需要跑赢同行就够了。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="破局！初级工程师何去何从">
+<meta property="og:url" content="http://example.com/2026/03/11/%E7%A0%B4%E5%B1%80%EF%BC%81%E5%88%9D%E7%BA%A7%E5%B7%A5%E7%A8%8B%E5%B8%88%E4%BD%95%E5%8E%BB%E4%BD%95%E4%BB%8E/index.html">
+<meta property="og:site_name" content="Hello,World！-BangBang的计算机技术世界">
+<meta property="og:description" content="大家或许都有过这样的迷茫——跟着学习路线学了 Redis、gRPC，转头又去学 Vue、TypeScript，再追一追 Agent、LangChain、LangGraph。学了不少，心里却空落落的，总觉得自己啥都没真正学会，而这些东西 AI 好像都能做得比自己好。 说实话，这个焦虑很正常。AI 迭代的速度，确实不是我们个人能追得上的。但换个角度想：我们从来不需要跑赢 AI，只需要跑赢同行就够了。">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="http://example.com/img/1funuo.jpg">
+<meta property="article:published_time" content="2026-03-11T12:13:59.000Z">
+<meta property="article:modified_time" content="2026-03-11T12:16:38.082Z">
+<meta property="article:author" content="BangBang">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="http://example.com/img/1funuo.jpg">
+  
+  
+  
+  <title>破局！初级工程师何去何从 - Hello,World！-BangBang的计算机技术世界</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/c/font_1749284_5i9bdhy70f8.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/c/font_1736178_k526ubmyhba.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+  
+
+
+
+  
+<link rel="stylesheet" href="/css/custom.css">
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"example.com","root":"/","version":"1.9.8","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"left","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":4},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false},"umami":{"src":null,"website_id":null,"domains":null,"start_time":"2024-01-01T00:00:00.000Z","token":null,"api_server":null}},"search_path":"/local-search.xml","include_content_in_search":true};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+  
+
+
+  
+<meta name="generator" content="Hexo 8.1.1"></head>
+
+
+<body>
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 70vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>Fluid</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/" target="_self">
+                <i class="iconfont icon-home-fill"></i>
+                <span>Home</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/" target="_self">
+                <i class="iconfont icon-archive-fill"></i>
+                <span>Archives</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/" target="_self">
+                <i class="iconfont icon-category-fill"></i>
+                <span>Categories</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/" target="_self">
+                <i class="iconfont icon-user-fill"></i>
+                <span>About</span>
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              <i class="iconfont icon-search"></i>
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">
+              <i class="iconfont icon-dark" id="color-toggle-icon"></i>
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('/img/%E5%BC%97%E7%B3%AF%E7%B3%AF.jpg') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="破局！初级工程师何去何从"></span>
+          
+        </div>
+
+        
+          
+  <div class="mt-3">
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2026-03-11 20:13" pubdate>
+          March 11, 2026 pm
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
+        
+          2k words
+        
+      </span>
+    
+
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
+        
+        
+        
+          17 mins
+        
+      </span>
+    
+
+    
+    
+  </div>
+
+
+        
+      </div>
+
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="padding-left: 2rem; margin-right: -1rem">
+    <div id="toc">
+  <p class="toc-header">
+    <i class="iconfont icon-list"></i>
+    <span>Table of Contents</span>
+  </p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <h1 id="seo-header">破局！初级工程师何去何从</h1>
+            
+            
+              <div class="markdown-body">
+                
+                <p>大家或许都有过这样的迷茫——跟着学习路线学了 Redis、gRPC，转头又去学 Vue、TypeScript，再追一追 Agent、LangChain、LangGraph。学了不少，心里却空落落的，总觉得自己啥都没真正学会，而这些东西 AI 好像都能做得比自己好。</p>
+<p>说实话，这个焦虑很正常。AI 迭代的速度，确实不是我们个人能追得上的。但换个角度想：<strong>我们从来不需要跑赢 AI，只需要跑赢同行就够了。</strong> 说白了就是一件事——<strong>做出差异化</strong>。你可以是某个开源项目的核心贡献者，可以是面试场上的八股战神，也可以是善用 AI 倍增产能的技术大神，总之得有一张自己的牌。</p>
+<p>接下来我想从三个方面聊聊：<strong>信息时代的认知困境、怎么构建差异化，以及怎么学习。</strong></p>
+<h2 id="互联网时代，获取信息的难度降低却提高了获取知识的门槛"><a href="#互联网时代，获取信息的难度降低却提高了获取知识的门槛" class="headerlink" title="互联网时代，获取信息的难度降低却提高了获取知识的门槛"></a>互联网时代，获取信息的难度降低却提高了获取知识的门槛</h2><p>现在这个时代，顶级学府的公开课、最前沿的论文、写得特别好的技术博客——你想要的几乎都能找到。看起来只要肯努力，谁都能变得很厉害。</p>
+<p>但真的是这样吗？其实信息太多了之后，反而带来了两个比”找不到资源”更头疼的问题。</p>
+<h3 id="一、筛选信息的成本，远高于获取信息的成本"><a href="#一、筛选信息的成本，远高于获取信息的成本" class="headerlink" title="一、筛选信息的成本，远高于获取信息的成本"></a>一、筛选信息的成本，远高于获取信息的成本</h3><p>你肯定有过这种体验：打开知乎，满屏都是语言之争——“Java 要被淘汰了””前端已死””Go 不如 Rust”；问 AI 吧，动不动就给你编一个不存在的库；好不容易搜到一份经典学习资料，又开始纠结——这东西不会过时了吧？</p>
+<p>你看，我们花了大把时间在”选择学什么”上面，真正花在”学”上面的精力反而不多。</p>
+<p>怎么办？我的建议很简单：<strong>Just do it。</strong> “先像模像样，再有模有样。”互联网上能被广泛推荐的资料，大多已经经过了市场筛选，含金量不会太低。别纠结了，找到就学，先学再想，在实践中慢慢校准方向。</p>
+<h3 id="二、信息不等于知识，了解不等于掌握"><a href="#二、信息不等于知识，了解不等于掌握" class="headerlink" title="二、信息不等于知识，了解不等于掌握"></a>二、信息不等于知识，了解不等于掌握</h3><p>还有一个更隐蔽的坑：刷了一圈技术博客，看了几个教程视频，就觉得自己”会了”。最新的前端框架了解了，前沿的 AI 工具链也知道了——但如果只停留在”知道”这个层面，说白了你只是<strong>获取了信息</strong>，离真正的<strong>知识</strong>还差得远。</p>
+<p>后果很现实：什么都懂一点，什么都不精通。看起来涉猎广泛，实际上没有任何壁垒。等到真正需要你拿出本事的时候，手里一张牌都没有。</p>
+<p>记住一句话：<strong>知识的本质是能解决实际问题的能力。</strong> 从信息到知识，中间隔着系统性的学习、反复的动手实践和持续的深度思考。没有捷径。</p>
+<hr>
+<h2 id="如何做出差异化，我们的方向是什么"><a href="#如何做出差异化，我们的方向是什么" class="headerlink" title="如何做出差异化，我们的方向是什么"></a>如何做出差异化，我们的方向是什么</h2><p>说完困境，咱们聊点实在的——到底往哪个方向使劲？后端只会 CRUD，前端只会写页面，在现在这个环境下是远远不够的。你得给自己攒点<strong>真正的本钱</strong>，那些不容易被替代、不容易被速成的硬能力。</p>
+<h3 id="Go-后端三个方向"><a href="#Go-后端三个方向" class="headerlink" title="Go 后端三个方向"></a>Go 后端三个方向</h3><ol>
+<li><strong>云原生方向：</strong> 容器编排、服务网格、可观测性——这是后端基础设施的主战场。</li>
+<li><strong>中间件方向：</strong> 消息队列、缓存体系、网关设计——分布式系统的骨架和血管。</li>
+<li><strong>分布式方向：</strong> 一致性协议、分布式存储、调度系统——后端工程师天花板最高的赛道。</li>
+</ol>
+<h3 id="前端的方向"><a href="#前端的方向" class="headerlink" title="前端的方向"></a>前端的方向</h3><p>前端同学也别觉得自己没出路，恰恰相反，前端能深挖的方向很多（我是AI生的咕咕嘎嘎）</p>
+<ol>
+<li><p><strong>大前端基建与工程化：</strong> 当公司前端项目几百个、代码上百万行的时候，普通业务开发就搞不定了。构建工具链（用 Rust 重写打包工具）、微前端架构、BFF 中间层——这些就是前端的”基础设施”。</p>
+</li>
+<li><p><strong>复杂富应用与底层计算（Wasm &amp; Local-First）：</strong> 把网页做到媲美 Figma、VS Code Web 那种级别。WebAssembly 突破浏览器性能天花板，Local-First 实现离线可用、在线秒同步。</p>
+</li>
+<li><p><strong>跨端与跨平台底层：</strong> 差异化不在于你会写 React Native 业务代码，而在于你懂不懂 Electron、Tauri 这些底层容器，懂不懂 Flutter 的 Dart 虚拟机和 RN 新架构。</p>
+</li>
+<li><p><strong>Web 3D 与图形学：</strong> 这是前端绝对的高门槛护城河。Three.js、WebGL、WebGPU、Shader 编程——懂这些的人极其稀缺，AI 也很难替代你调一个复杂的 3D 光影效果。</p>
+</li>
+</ol>
+<hr>
+<h2 id="如何学习"><a href="#如何学习" class="headerlink" title="如何学习"></a>如何学习</h2><p>方向选好了，怎么学也很重要，这里分享几点我自己的心得。</p>
+<p><strong>基础知识，老老实实看书。</strong> 操作系统、计算机网络、数据结构与算法——这些东西没有捷径，看书是最靠谱的方式。一本经典教材带来的系统性，真不是刷几篇博客能比的。</p>
+<p><strong>学框架、学前沿技术，就靠项目驱动。</strong> 学一个框架最快的方式不是通读文档，而是带着一个真实需求去做。AI 开发、Agent 编排也一样——先动手搞一个能跑的东西出来，比看十篇教程都有用。</p>
+<p><strong>最重要的一点：长期主义。</strong> 可以接受一段时间”颗粒无收”，但别接受自己原地踏步。把时间战线拉长一点——三个月好好吃透一门知识，别焦虑眼前的进度。也别担心同时学多个方向会”混”，你高中还八门课一起上呢，也没混啊。关键是<strong>先锚定一个主方向</strong>，站稳了再往外扩展。</p>
+<p><strong>关于学校的课。</strong> 该怎么说呢，灵活处理就好。如果课程内容跟你的方向关系不大，那它就是一段绝佳的自习时间。高数之类的基础课，想拿高分就认真学；不想的话，每周抽一个小时应付一下也够了。</p>
+
+                
+              </div>
+            
+            <hr/>
+            <div>
+              <div class="post-metas my-3">
+  
+  
+</div>
+
+
+              
+  
+
+  <div class="license-box my-3">
+    <div class="license-title">
+      <div>破局！初级工程师何去何从</div>
+      <div>http://example.com/2026/03/11/破局！初级工程师何去何从/</div>
+    </div>
+    <div class="license-meta">
+      
+        <div class="license-meta-item">
+          <div>Author</div>
+          <div>BangBang</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>Posted on</div>
+          <div>March 11, 2026</div>
+        </div>
+      
+      
+      
+        <div class="license-meta-item">
+          <div>Licensed under</div>
+          <div>
+            
+              
+              
+                <a class="print-no-link" target="_blank" href="https://creativecommons.org/licenses/by/4.0/">
+                  <span class="hint--top hint--rounded" aria-label="BY - Attribution">
+                    <i class="iconfont icon-cc-by"></i>
+                  </span>
+                </a>
+              
+            
+          </div>
+        </div>
+      
+    </div>
+    <div class="license-icon iconfont"></div>
+  </div>
+
+
+
+              
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2026/02/22/%E6%87%92%E4%BA%BA%E5%BF%85%E5%A4%87%EF%BC%81entorm%E6%95%99%E7%A8%8B%E6%9D%A5%E4%BA%86%EF%BC%81/" title="懒人必备！entorm教程来了！">
+                        <span class="hidden-mobile">懒人必备！entorm教程来了！</span>
+                        <span class="visible-mobile">Next</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">Search</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">Keyword</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+       <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+    </div>
+  
+  
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.4/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.20.1/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init(Object.assign({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      scrollSmooth    : true,
+      includeTitleTags: true,
+      headingsOffset  : -boardTop,
+    }, CONFIG.toc));
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('tocbot' in window) {
+        tocbot.refresh();
+        var toc = jQuery('#toc');
+        if (toc.length === 0 || !tocbot) {
+          return;
+        }
+        if (toc.find('.toc-list-item').length > 0) {
+          toc.css('visibility', 'visible');
+        }
+      }
+    });
+  });
+</script>
+
+
+  <script src=https://lib.baomitu.com/clipboard.js/2.0.11/clipboard.min.js></script>
+
+  <script>Fluid.plugins.codeWidget();</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/5.0.0/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('anchors' in window) {
+        anchors.removeAll();
+        var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+        var res = [];
+        for (var item of el) {
+          res.push('.markdown-body > ' + item.trim());
+        }
+        if (CONFIG.anchorjs.placement === 'left') {
+          anchors.options.class = 'anchorjs-link-left';
+        }
+        anchors.add(res.join(', '));
+      }
+    });
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script>Fluid.plugins.imageCaption();</script>
+
+  <script  src="/js/local-search.js" ></script>
+
+
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">Blog works best with JavaScript enabled</div>
+  </noscript>
+</body>
+</html>
